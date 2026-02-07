@@ -73,14 +73,19 @@ nav.scrolled {
 }
 
 .footer-brand-heading {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
+  vertical-align: middle;
 }
 .footer-brand-heading img {
   height: 28px;
   width: auto;
+  display: block;
+}
+.footer-brand-heading h3 {
+  line-height: 1;
 }
 
 .nav-links {
@@ -105,7 +110,7 @@ nav.scrolled {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent);
+  background: #d4a847;
   transition: width 0.4s ease;
 }
 .nav-links a:hover {
@@ -352,7 +357,7 @@ section {
 .cta-button {
   display: inline-block;
   padding: 16px 48px;
-  background: var(--accent);
+  background: #d4a847;
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -365,7 +370,7 @@ section {
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,255,136,0.3);
+  box-shadow: 0 8px 24px rgba(212,168,71,0.3);
 }
 
 /* ─── Contact Form ─── */
@@ -415,7 +420,7 @@ section {
 .form-submit {
   width: 100%;
   padding: 18px;
-  background: var(--accent);
+  background: #d4a847;
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -429,7 +434,7 @@ section {
 
 .form-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,255,136,0.3);
+  box-shadow: 0 8px 24px rgba(212,168,71,0.3);
 }
 
 /* ─── Footer ─── */
@@ -470,7 +475,7 @@ footer {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: var(--accent);
+  color: #d4a847;
 }
 
 .footer-section ul {
