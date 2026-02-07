@@ -63,6 +63,24 @@ nav.scrolled {
   color: var(--text);
   text-decoration: none;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-brand-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.footer-brand-heading img {
+  height: 28px;
+  width: auto;
 }
 
 .nav-links {
