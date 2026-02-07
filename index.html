@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LYCKA â€” Biotech Marketing Agency</title>
+<title>LYCKA - Biotech Marketing Agency</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,8 +19,9 @@
   </ul>
 </nav>
 
-<!-- â”€â”€â”€ Hero â”€â”€â”€ -->
+<!-- â"€â"€â"€ Hero â"€â"€â"€ -->
 <section class="hero">
+  <div class="hero-dots" id="hero-dots"></div>
   <!-- SWAP: add your logo image here -->
   <!-- <img src="lycka-logo.png" alt="LYCKA" class="hero-logo"> -->
   <h1 class="hero-title">
@@ -166,6 +167,26 @@
 <script>
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+  // Floating dots
+  const dotsContainer = document.getElementById('hero-dots');
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('span');
+    const size = 4 + Math.random() * 12;
+    const opacity = 0.2 + Math.random() * 0.6;
+    const blur = Math.random() * 3;
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const delay = Math.random() * 5;
+    dot.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${x}%; top:${y}%;
+      filter:blur(${blur}px);
+      --dot-o:${opacity};
+      animation-delay:${delay}s;
+    `;
+    dotsContainer.appendChild(dot);
+  }
 </script>
 
 </body>
