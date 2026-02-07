@@ -217,7 +217,7 @@ nav.scrolled {
 }
 .intro-content {
   max-width: 1000px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   padding: 60px;
   border-radius: 4px;
 }
@@ -275,6 +275,18 @@ section {
   color: var(--text);
 }
 
+.card-white {
+  background: #fff;
+  padding: 40px;
+  border-radius: 4px;
+}
+.card-white h3 {
+  color: #000;
+}
+.card-white p {
+  color: #000;
+}
+
 .content-card p {
   font-size: 16px;
   font-weight: 300;
@@ -301,7 +313,7 @@ section {
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent);
+  color: #d4a847;
   font-weight: 600;
 }
 
