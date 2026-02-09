@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChromaIO case study - Brand identity and web design by LYCKA Digital">
+    <title>ChromaIO Case Study — LYCKA Digital</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --void: #0A0A0A;
+            --ghost: #F5F5F5;
+            --signal: #FFFFFF;
+            --bioelectric: #00FFB3;
+            --muted: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--void);
+            color: var(--ghost);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER - Your exact styling */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo a {
+            color: var(--signal);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--ghost);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--bioelectric);
+        }
+
+        /* CASE STUDY CONTENT */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .case-hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .case-hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .case-hero-logo img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+        }
+
+        .case-hero h1 {
+            font-size: 4rem;
+            font-weight: 500;
+            color: var(--signal);
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+        }
+
+        /* Project Meta */
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            color: var(--ghost);
+            font-weight: 500;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--signal);
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--signal);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .content-section p {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.125rem;
+            color: var(--ghost);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--bioelectric);
+            font-weight: 500;
+        }
+
+        /* Image Showcase */
+        .showcase-section {
+            padding: 6rem 0;
+            max-width: 100%;
+        }
+
+        .browser-mockup {
+            background: #1F2937;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .browser-bar {
+            background: #374151;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #EF4444;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #F59E0B;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #10B981;
+        }
+
+        .browser-content {
+            background: white;
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .browser-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Stats Grid */
+        .stats-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--bioelectric);
+            background: rgba(0, 255, 179, 0.03);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--bioelectric);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: var(--ghost);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--signal);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--bioelectric);
+            color: var(--void);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 255, 179, 0.3);
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--bioelectric);
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        /* FOOTER - Your exact styling */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 5% 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--ghost);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--bioelectric);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 5%;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .case-hero {
+                padding: 3rem 0 2rem;
+            }
+
+            .case-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .case-hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .project-meta {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .content-section {
+                padding: 3rem 0;
+            }
+
+            .content-section h2 {
+                font-size: 2rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p {
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER - Your exact navigation -->
+    <header>
+        <div class="logo">
+            <a href="index.html">LYCKA</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="mailto:hello@lycka.digital">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CASE STUDY CONTENT -->
+    <main>
+        <section class="case-hero">
+            <a href="work.html" class="back-link">Back to Work</a>
+            
+            <div class="case-hero-logo">
+                <img src="assets/case-studies/chromaio_icon.png" alt="ChromaIO Logo">
+            </div>
+            
+            <h1>ChromaIO</h1>
+            <p class="case-hero-subtitle">Modernizing chromatography analysis software for next-generation researchers</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Client</div>
+                    <div class="meta-value">ChromaIO Labs</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Industry</div>
+                    <div class="meta-value">Lab Software</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Services</div>
+                    <div class="meta-value">Brand, Web Design</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Year</div>
+                    <div class="meta-value">2024</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            <p>ChromaIO came to LYCKA with a powerful chromatography analysis platform hampered by outdated branding and a confusing market position. Despite having superior technology, they were losing potential customers to competitors with more approachable brand identities.</p>
+            
+            <p>The existing visual identity felt clinical and dated, alienating younger researchers while failing to communicate the platform's innovative capabilities. Their website buried key features under technical jargon, and new users faced a steep learning curve that discouraged trial signups.</p>
+            
+            <p>ChromaIO needed to <span class="highlight">transform from a legacy tool into a modern platform</span> that felt as innovative as the science it enabled.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Approach</h2>
+            <p>LYCKA partnered with ChromaIO to reimagine their brand from the ground up, creating an identity that would resonate with both seasoned chromatographers and early-career researchers.</p>
+            
+            <h3>Brand Identity</h3>
+            <p>We developed a fresh visual system built around the metaphor of data visualization itself. The logo's colorful waveforms reference chromatography peaks while feeling modern and approachable. The color palette balances scientific credibility with accessibility, moving away from sterile blues toward a warm, multi-spectrum approach.</p>
+            
+            <h3>Web Experience</h3>
+            <p>The new website prioritizes clarity and conversion. We restructured the information architecture to lead with benefits rather than features, using clear language that speaks to researcher needs: faster analysis, better collaboration, and confidence in results.</p>
+            
+            <p>Interactive product demos replace static screenshots, letting visitors experience the platform's capabilities before signing up. The design system scales seamlessly from desktop workstations to mobile devices, recognizing that researchers access tools across contexts.</p>
+        </section>
+
+        <section class="showcase-section">
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                </div>
+                <div class="browser-content">
+                    <iframe src="chromaio-website.html" title="ChromaIO Website Preview"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="content-section" style="padding: 0;">
+                <h2>The Impact</h2>
+                <p>The rebrand transformed ChromaIO's market position overnight. Within three months of launch, the platform saw dramatic improvements across all key metrics.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">340%</div>
+                    <div class="stat-label">Increase in trial signups</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Faster onboarding</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2,400+</div>
+                    <div class="stat-label">Active research labs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">User satisfaction</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <p>The new brand helped ChromaIO secure Series A funding three months ahead of schedule, with investors citing the professional brand presence as a key factor in their decision. The platform was featured in <em>Analytical Chemistry</em> magazine and presented at major industry conferences.</p>
+            
+            <p>Most importantly, researchers reported that ChromaIO now "feels like software built for scientists by scientists who understand modern design." The brand successfully bridges scientific rigor with contemporary user expectations.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to transform your brand?</h2>
+            <p>Let's build something exceptional together.</p>
+            <a href="mailto:hello@lycka.digital" class="cta-button">Start a Project</a>
+        </section>
+    </main>
+
+    <!-- FOOTER - Your exact footer -->
+    <footer>
+        <p>&copy; 2024 LYCKA Digital. Studio for Future Systems.</p>
+        <p><a href="mailto:hello@lycka.digital">hello@lycka.digital</a></p>
+    </footer>
+</body>
+</html>

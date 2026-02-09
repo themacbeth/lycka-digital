@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChromaIO - Modern Chromatography Analysis Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1F2937;
+            --accent-yellow: #F59E0B;
+            --accent-teal: #14B8A6;
+            --accent-blue: #3B82F6;
+            --accent-orange: #F97316;
+            --accent-red: #EF4444;
+            --bg-light: #F9FAFB;
+            --text-dark: #111827;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .btn-primary {
+            background: var(--accent-yellow);
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #D97706;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: white;
+            padding: 6rem 5% 5rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.375rem;
+            color: #D1D5DB;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Section Container */
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card:nth-child(1) .feature-icon { background: rgba(245, 158, 11, 0.1); color: var(--accent-yellow); }
+        .feature-card:nth-child(2) .feature-icon { background: rgba(20, 184, 166, 0.1); color: var(--accent-teal); }
+        .feature-card:nth-child(3) .feature-icon { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); }
+        .feature-card:nth-child(4) .feature-icon { background: rgba(249, 115, 22, 0.1); color: var(--accent-orange); }
+        .feature-card:nth-child(5) .feature-icon { background: rgba(239, 68, 68, 0.1); color: var(--accent-red); }
+        .feature-card:nth-child(6) .feature-icon { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Platform Section */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .platform-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .platform-content p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .platform-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .platform-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .platform-features li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-image {
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .platform-mockup {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            color: #D1D5DB;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-yellow);
+            box-shadow: 0 20px 60px rgba(245, 158, 11, 0.15);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-badge {
+            background: var(--accent-yellow);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1.5rem 0;
+        }
+
+        .pricing-price span {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--accent-teal);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 5% 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #9CA3AF;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="header-logo">
+                <img src="assets/case-studies/chromaio_icon.png" alt="ChromaIO">
+                ChromaIO
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#platform">Platform</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#" class="btn-primary">Start Free Trial</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Modern Chromatography<br>Analysis, <span class="hero-gradient">Simplified</span></h1>
+            <p>Cloud-based platform for analyzing, visualizing, and sharing chromatography data. Designed for researchers who demand precision without complexity.</p>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.125rem;">Start Free Trial</a>
+                <a href="#" class="btn-secondary">Watch Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Everything You Need in One Platform</h2>
+                <p>Powerful features designed specifically for chromatography workflows</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-Time Analysis</h3>
+                    <p>Process and visualize chromatography data in real-time with advanced peak detection and integration algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Multi-Technique Support</h3>
+                    <p>Works with HPLC, GC, LC-MS, and more. Universal compatibility with major instrument manufacturers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Cloud Collaboration</h3>
+                    <p>Share datasets, annotations, and reports instantly with your team. Work from anywhere, on any device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Machine learning models detect anomalies, suggest optimizations, and automate routine quality checks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Review results and approve batches from your phone. Full-featured mobile apps for iOS and Android.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Compliance Ready</h3>
+                    <p>21 CFR Part 11 compliant with complete audit trails, electronic signatures, and data integrity controls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform -->
+    <section class="section" id="platform" style="background: white;">
+        <div class="section-container">
+            <div class="platform-grid">
+                <div class="platform-content">
+                    <h3>Desktop Power, Cloud Flexibility</h3>
+                    <p>ChromaIO combines the analytical power of desktop software with the accessibility of cloud platforms. Process data locally for speed, sync to the cloud for collaboration.</p>
+                    <ul class="platform-features">
+                        <li>Native desktop apps (Windows, Mac, Linux)</li>
+                        <li>Web-based dashboard for remote access</li>
+                        <li>Mobile companion apps</li>
+                        <li>Offline mode with automatic sync</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Download Desktop App</a>
+                </div>
+                <div class="platform-image">
+                    <div class="platform-mockup">
+                        <div style="background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%); height: 8px; border-radius: 4px; margin-bottom: 2rem;"></div>
+                        <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="flex: 1; height: 120px; background: #F3F4F6; border-radius: 8px;"></div>
+                            <div style="flex: 1; height: 120px; background: #E5E7EB; border-radius: 8px;"></div>
+                        </div>
+                        <div style="height: 180px; background: linear-gradient(180deg, #F3F4F6 0%, #E5E7EB 100%); border-radius: 8px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats-section">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2,400+</div>
+                    <div class="stat-label">Research Labs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15M+</div>
+                    <div class="stat-label">Analyses Processed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Time Savings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">User Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Pricing Built for Research Teams</h2>
+                <p>Start free, scale as you grow. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="pricing-price">Free</div>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Perfect for individual researchers</p>
+                    <ul class="pricing-features">
+                        <li>Up to 100 analyses/month</li>
+                        <li>Basic visualization tools</li>
+                        <li>2GB cloud storage</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="pricing-price">$99<span>/month</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">For growing research teams</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited analyses</li>
+                        <li>Advanced AI features</li>
+                        <li>50GB cloud storage</li>
+                        <li>Team collaboration</li>
+                        <li>Priority support</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="pricing-price">Custom</div>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">For large organizations</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Professional</li>
+                        <li>Unlimited storage</li>
+                        <li>SSO & advanced security</li>
+                        <li>Dedicated account manager</li>
+                        <li>SLA guarantees</li>
+                        <li>On-premise deployment</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="section-container">
+            <h2>Ready to Transform Your Workflow?</h2>
+            <p>Join 2,400+ research labs using ChromaIO</p>
+            <a href="#" class="btn-white">Start Your Free Trial</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ChromaIO Labs. All rights reserved.</p>
+        <p>A LYCKA Digital Brand Project</p>
+    </footer>
+</body>
+</html>

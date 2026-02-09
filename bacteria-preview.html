@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bacteria Animation Preview</title>
+<style>
+  * { margin: 0; padding: 0; }
+  body { background: #000; overflow: hidden; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let animationFrameId;
+let time = 0;
+
+const resize = () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+};
+resize();
+window.addEventListener('resize', resize);
+
+class Bacteria {
+  constructor() {
+    this.reset();
+    this.y = Math.random() * canvas.height;
+  }
+
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = -100;
+    this.length = 60 + Math.random() * 80;
+    this.width = this.length * 0.4;
+    this.rotation = Math.random() * Math.PI * 2;
+    this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+    this.speed = 0.3 + Math.random() * 0.5;
+    this.wobble = Math.random() * Math.PI * 2;
+    this.wobbleSpeed = 0.02 + Math.random() * 0.02;
+    this.opacity = 0.4 + Math.random() * 0.4;
+    this.hueOffset = Math.random() * 360;
+  }
+
+  update() {
+    this.y += this.speed;
+    this.rotation += this.rotationSpeed;
+    this.wobble += this.wobbleSpeed;
+    this.x += Math.sin(this.wobble) * 0.5;
+    if (this.y > canvas.height + 100) this.reset();
+  }
+
+  draw(ctx, time) {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
+    ctx.globalAlpha = this.opacity;
+
+    const gradient = ctx.createLinearGradient(-this.length/2, 0, this.length/2, 0);
+    const hue1 = (time * 50 + this.hueOffset) % 360;
+    const hue2 = (time * 50 + this.hueOffset + 180) % 360;
+    gradient.addColorStop(0, `hsla(${hue1}, 100%, 70%, 0.6)`);
+    gradient.addColorStop(0.5, `hsla(${hue2}, 100%, 80%, 0.8)`);
+    gradient.addColorStop(1, `hsla(${hue1}, 100%, 70%, 0.6)`);
+
+    // Main body
+    ctx.beginPath();
+    ctx.ellipse(0, 0, this.length/2, this.width/2, 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(40, 40, 45, 0.9)';
+    ctx.fill();
+
+    // Iridescent membrane
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Inner holographic spots
+    for (let i = 0; i < 8; i++) {
+      const spotX = (Math.random() - 0.5) * this.length * 0.6;
+      const spotY = (Math.random() - 0.5) * this.width * 0.5;
+      const spotSize = 3 + Math.random() * 8;
+      const spotHue = (time * 100 + i * 45 + this.hueOffset) % 360;
+      ctx.beginPath();
+      ctx.arc(spotX, spotY, spotSize, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${spotHue}, 100%, 60%, ${0.3 + Math.sin(time * 3 + i) * 0.2})`;
+      ctx.fill();
+    }
+
+    // Cilia
+    const ciliaCount = Math.floor(this.length / 8);
+    for (let i = 0; i < ciliaCount; i++) {
+      const angle = (i / ciliaCount) * Math.PI * 2;
+      const startX = Math.cos(angle) * (this.length/2);
+      const startY = Math.sin(angle) * (this.width/2);
+      const ciliaLength = 15 + Math.random() * 10;
+      const wave = Math.sin(time * 5 + i) * 5;
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.lineTo(
+        startX + Math.cos(angle) * ciliaLength + wave,
+        startY + Math.sin(angle) * ciliaLength + wave
+      );
+      ctx.strokeStyle = 'rgba(180, 180, 200, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+}
+
+const bacteria = [];
+for (let i = 0; i < 15; i++) bacteria.push(new Bacteria());
+
+const animate = () => {
+  time += 0.01;
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  bacteria.forEach(b => { b.update(); b.draw(ctx, time); });
+  animationFrameId = requestAnimationFrame(animate);
+};
+
+animate();
+</script>
+</body>
+</html>
