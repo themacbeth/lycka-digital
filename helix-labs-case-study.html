@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ChromaIO case study - Brand identity and web design by LYCKA Digital">
-    <title>ChromaIO Case Study — LYCKA Digital</title>
-    
+    <meta name="description" content="Helix Labs case study - Go-to-market brand assets and tradeshow collateral by LYCKA Digital">
+    <title>Helix Labs Case Study — LYCKA Digital</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --void: #0A0A0A;
@@ -34,7 +34,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER - Your exact styling */
+        /* HEADER */
         header {
             padding: 2rem 5%;
             display: flex;
@@ -90,7 +90,7 @@
         }
 
         .case-hero-logo img {
-            max-width: 180px;
+            max-width: 220px;
             height: auto;
             filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
         }
@@ -176,56 +176,31 @@
             font-weight: 500;
         }
 
-        /* Image Showcase */
-        .showcase-section {
-            padding: 6rem 0;
-            max-width: 100%;
+        /* Image Gallery */
+        .gallery-section {
+            padding: 4rem 0;
         }
 
-        .browser-mockup {
-            background: #1F2937;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
 
-        .browser-bar {
-            background: #374151;
-            padding: 1rem 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .browser-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #EF4444;
-        }
-
-        .browser-dot:nth-child(2) {
-            background: #F59E0B;
-        }
-
-        .browser-dot:nth-child(3) {
-            background: #10B981;
-        }
-
-        .browser-content {
-            background: white;
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .browser-content iframe {
+        .gallery-grid img {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-full {
+            grid-column: 1 / -1;
         }
 
         /* Stats Grid */
@@ -328,7 +303,7 @@
         }
 
         .back-link::before {
-            content: '← ';
+            content: '\2190 ';
         }
 
         /* FOOTER */
@@ -467,6 +442,10 @@
                 font-size: 1rem;
             }
 
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -501,7 +480,6 @@
     </style>
 </head>
 <body>
-    <!-- HEADER - Your exact navigation -->
     <header>
         <div class="logo">
             <a href="index.html">LYCKA</a>
@@ -515,108 +493,106 @@
         </nav>
     </header>
 
-    <!-- CASE STUDY CONTENT -->
     <main>
         <section class="case-hero">
             <a href="work.html" class="back-link">Back to Work</a>
-            
+
             <div class="case-hero-logo">
-                <img src="assets/case-studies/chromaio_icon.png" alt="ChromaIO Logo">
+                <img src="assets/case-studies/HELIX/Helix-labs (6).png" alt="Helix Labs Logo">
             </div>
-            
-            <h1>ChromaIO</h1>
-            <p class="case-hero-subtitle">Modernizing chromatography analysis software for next-generation researchers</p>
-            
+
+            <h1>Helix Labs</h1>
+            <p class="case-hero-subtitle">Launch-ready brand assets and tradeshow collateral for a next-generation DNA analysis platform</p>
+
             <div class="project-meta">
                 <div class="meta-item">
                     <div class="meta-label">Client</div>
-                    <div class="meta-value">ChromaIO Labs</div>
+                    <div class="meta-value">Helix Labs</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Industry</div>
-                    <div class="meta-value">Lab Software</div>
+                    <div class="meta-value">Genomics / DNA Analysis</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Services</div>
-                    <div class="meta-value">Brand, Web Design</div>
+                    <div class="meta-value">Brand Assets, Tradeshow</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Year</div>
-                    <div class="meta-value">2024</div>
+                    <div class="meta-value">2025</div>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
             <h2>The Challenge</h2>
-            <p>ChromaIO came to LYCKA with a powerful chromatography analysis platform hampered by outdated branding and a confusing market position. Despite having superior technology, they were losing potential customers to competitors with more approachable brand identities.</p>
-            
-            <p>The existing visual identity felt clinical and dated, alienating younger researchers while failing to communicate the platform's innovative capabilities. Their website buried key features under technical jargon, and new users faced a steep learning curve that discouraged trial signups.</p>
-            
-            <p>ChromaIO needed to <span class="highlight">transform from a legacy tool into a modern platform</span> that felt as innovative as the science it enabled.</p>
+            <p>Helix Labs had built a breakthrough portable DNA sequencing platform capable of delivering results in under 90 minutes. Their technology was validated, their pipeline was strong, and Series A funding was secured. What they didn't have was a brand presence that matched their ambition.</p>
+
+            <p>With their first major product launch approaching and booth space booked at three flagship genomics conferences, Helix Labs needed a complete suite of go-to-market materials. They had weeks, not months, and everything needed to work together seamlessly — from one-pagers handed to investors to 10-foot banners commanding attention on the show floor.</p>
+
+            <p>The challenge was clear: <span class="highlight">translate complex science into collateral that sells</span>, without sacrificing the technical credibility their audience demands.</p>
         </section>
 
         <section class="content-section">
             <h2>Our Approach</h2>
-            <p>LYCKA partnered with ChromaIO to reimagine their brand from the ground up, creating an identity that would resonate with both seasoned chromatographers and early-career researchers.</p>
-            
-            <h3>Brand Identity</h3>
-            <p>We developed a fresh visual system built around the metaphor of data visualization itself. The logo's colorful waveforms reference chromatography peaks while feeling modern and approachable. The color palette balances scientific credibility with accessibility, moving away from sterile blues toward a warm, multi-spectrum approach.</p>
-            
-            <h3>Web Experience</h3>
-            <p>The new website prioritizes clarity and conversion. We restructured the information architecture to lead with benefits rather than features, using clear language that speaks to researcher needs: faster analysis, better collaboration, and confidence in results.</p>
-            
-            <p>Interactive product demos replace static screenshots, letting visitors experience the platform's capabilities before signing up. The design system scales seamlessly from desktop workstations to mobile devices, recognizing that researchers access tools across contexts.</p>
+            <p>LYCKA embedded with the Helix Labs team for a focused three-week sprint, working across brand assets and tradeshow collateral simultaneously to meet their launch timeline.</p>
+
+            <h3>Go-to-Market Brand Assets</h3>
+            <p>From one-pagers to product brochures, we created the collateral Helix Labs needed to launch with confidence. Every asset was designed to reinforce the brand while serving its specific purpose — whether that meant distilling a complex workflow into a single visual for investors, or building a spec sheet that gave procurement teams exactly what they needed to approve a purchase order.</p>
+
+            <p>We developed a modular design system that allowed Helix Labs to generate new materials in-house after launch, ensuring brand consistency as their needs scaled.</p>
+
+            <h3>Tradeshow & Conference Collateral</h3>
+            <p>Standing out at the booth takes more than good science. We designed tradeshow graphics, banners, signage, and leave-behinds that grabbed attention in crowded exhibition halls and kept Helix Labs top-of-mind long after the event ended.</p>
+
+            <p>The booth design used bold structural graphics paired with clean data visualizations, creating an environment that invited conversation. Every touchpoint — from the retractable banners to the business cards — reinforced the same narrative: DNA analysis, simplified.</p>
         </section>
 
-        <section class="showcase-section">
-            <div class="browser-mockup">
-                <div class="browser-bar">
-                    <div class="browser-dot"></div>
-                    <div class="browser-dot"></div>
-                    <div class="browser-dot"></div>
-                </div>
-                <div class="browser-content">
-                    <iframe src="chromaio-website.html" title="ChromaIO Website Preview"></iframe>
-                </div>
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <img src="assets/case-studies/HELIX/Helix-labs (1).png" alt="Helix Labs brand collateral" class="gallery-full">
+                <img src="assets/case-studies/HELIX/Helix-labs (2).png" alt="Helix Labs product brochure">
+                <img src="assets/case-studies/HELIX/Helix-labs (3).png" alt="Helix Labs tradeshow materials">
+                <img src="assets/case-studies/HELIX/Helix-labs (4).png" alt="Helix Labs one-pager design">
+                <img src="assets/case-studies/HELIX/Helix-labs (5).png" alt="Helix Labs booth signage">
             </div>
         </section>
 
         <section class="stats-section">
             <div class="content-section" style="padding: 0;">
                 <h2>The Impact</h2>
-                <p>The rebrand transformed ChromaIO's market position overnight. Within three months of launch, the platform saw dramatic improvements across all key metrics.</p>
+                <p>Helix Labs launched at AGBT, ASHG, and Genomics Live with a unified brand presence that turned heads and started conversations. The results spoke for themselves.</p>
             </div>
-            
+
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">340%</div>
-                    <div class="stat-label">Increase in trial signups</div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Conference launches in 6 weeks</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">89%</div>
-                    <div class="stat-label">Faster onboarding</div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Qualified leads from events</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">2,400+</div>
-                    <div class="stat-label">Active research labs</div>
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">Demo-to-trial conversion rate</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">4.8/5</div>
-                    <div class="stat-label">User satisfaction</div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Enterprise pilots signed at launch</div>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
-            <p>The new brand helped ChromaIO secure Series A funding three months ahead of schedule, with investors citing the professional brand presence as a key factor in their decision. The platform was featured in <em>Analytical Chemistry</em> magazine and presented at major industry conferences.</p>
-            
-            <p>Most importantly, researchers reported that ChromaIO now "feels like software built for scientists by scientists who understand modern design." The brand successfully bridges scientific rigor with contemporary user expectations.</p>
+            <p>The brand assets became Helix Labs' primary sales toolkit, with the one-pager alone credited in closing three of their first enterprise deals. Conference attendees consistently commented that the booth "looked like a company ten times their size."</p>
+
+            <p>More importantly, the modular design system we built allowed Helix Labs to maintain brand consistency as they expanded into new markets — producing new materials internally without needing to start from scratch each time.</p>
         </section>
 
         <section class="cta-section">
-            <h2>Ready to transform your brand?</h2>
-            <p>Let's build something exceptional together.</p>
+            <h2>Ready to launch with confidence?</h2>
+            <p>Let's build the brand assets that match your ambition.</p>
             <a href="mailto:hello@lycka.digital" class="cta-button">Start a Project</a>
         </section>
     </main>
