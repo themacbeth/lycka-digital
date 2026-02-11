@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -436,6 +436,196 @@
             opacity: 0.5;
         }
 
+        /* ─── BRAND SHOWCASE ─── */
+        .brand-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 0;
+        }
+
+        .brand-showcase + .brand-showcase {
+            padding-top: 0;
+        }
+
+        .brand-showcase-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .brand-showcase-title {
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 500;
+            color: var(--signal);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .brand-showcase-desc {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 17px;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 600px;
+            font-weight: 300;
+            margin-bottom: 48px;
+        }
+
+        .logo-variants-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .logo-variant-card {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            border-radius: 2px;
+        }
+
+        .logo-variant-card svg {
+            height: 160px;
+            width: auto;
+        }
+
+        .logo-variant-card span {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .variant-teal { background: #2D6B77; }
+        .variant-teal span { color: rgba(255,255,255,0.5); }
+
+        .variant-light { background: #F0F4F5; }
+        .variant-light span { color: #666; }
+
+        .variant-dark {
+            background: var(--void);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .variant-dark span { color: rgba(255,255,255,0.4); }
+
+        .color-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2px;
+        }
+
+        .color-swatch-card {
+            padding: 36px 24px 24px;
+            border-radius: 2px;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch-card:hover { transform: translateY(-3px); }
+
+        .color-swatch-card .swatch-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .color-swatch-card .swatch-values {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            line-height: 2;
+            opacity: 0.7;
+        }
+
+        .color-swatch-card.swatch-on-dark .swatch-name,
+        .color-swatch-card.swatch-on-dark .swatch-values { color: white; }
+
+        .color-swatch-card.swatch-on-light .swatch-name,
+        .color-swatch-card.swatch-on-light .swatch-values { color: #183D44; }
+
+        .type-specimens-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .type-specimen-card {
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 4px;
+        }
+
+        .type-meta-row {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .type-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .type-meta-item .t-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--gold);
+        }
+
+        .type-meta-item .t-value {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .type-display-wordmark {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .type-display-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(28px, 3.5vw, 48px);
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .type-display-body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .type-alphabet {
+            font-size: 24px;
+            color: rgba(255,255,255,0.15);
+            letter-spacing: 0.03em;
+            margin-top: 20px;
+            word-break: break-all;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav#navbar {
@@ -497,6 +687,26 @@
 
             .cta-section p {
                 font-size: 1.125rem;
+            }
+
+            .logo-variants-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-variant-card {
+                padding: 40px 24px;
+            }
+
+            .brand-showcase {
+                padding: 3rem 0;
+            }
+
+            .color-palette-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .type-specimen-card {
+                padding: 24px;
             }
 
             footer {
@@ -565,6 +775,134 @@
             <p>This test case study exists to show our full branding and print production capabilities in one place.</p>
         </section>
 
+        <!-- ─── BRAND GUIDE: Logo Variations ─── -->
+        <section class="brand-showcase">
+            <div class="brand-showcase-label">01 — Logo</div>
+            <h2 class="brand-showcase-title">Logo Variations</h2>
+            <p class="brand-showcase-desc">The Helix Labs logo is used in three primary configurations. Always use the version with highest contrast against the background.</p>
+
+            <div class="logo-variants-grid">
+                <div class="logo-variant-card variant-teal">
+                    <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="35" y="10" width="130" height="22" rx="5" fill="white"/>
+                        <rect x="48" y="38" width="104" height="20" rx="5" fill="white"/>
+                        <rect x="62" y="64" width="76" height="18" rx="4" fill="white"/>
+                        <rect x="74" y="88" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="74" y="110" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="62" y="132" width="76" height="18" rx="4" fill="white"/>
+                        <rect x="48" y="156" width="104" height="20" rx="5" fill="white"/>
+                        <rect x="35" y="182" width="130" height="22" rx="5" fill="white"/>
+                        <text x="100" y="232" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="28" font-weight="700" fill="white" letter-spacing="4">HELIX LABS</text>
+                    </svg>
+                    <span>Primary — On Brand Teal</span>
+                </div>
+
+                <div class="logo-variant-card variant-light">
+                    <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="35" y="10" width="130" height="22" rx="5" fill="#2D6B77"/>
+                        <rect x="48" y="38" width="104" height="20" rx="5" fill="#2D6B77"/>
+                        <rect x="62" y="64" width="76" height="18" rx="4" fill="#2D6B77"/>
+                        <rect x="74" y="88" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="74" y="110" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="62" y="132" width="76" height="18" rx="4" fill="#2D6B77"/>
+                        <rect x="48" y="156" width="104" height="20" rx="5" fill="#2D6B77"/>
+                        <rect x="35" y="182" width="130" height="22" rx="5" fill="#2D6B77"/>
+                        <text x="100" y="232" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="28" font-weight="700" fill="#2D6B77" letter-spacing="4">HELIX LABS</text>
+                    </svg>
+                    <span>On Light Background</span>
+                </div>
+
+                <div class="logo-variant-card variant-dark">
+                    <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="35" y="10" width="130" height="22" rx="5" fill="white"/>
+                        <rect x="48" y="38" width="104" height="20" rx="5" fill="white"/>
+                        <rect x="62" y="64" width="76" height="18" rx="4" fill="white"/>
+                        <rect x="74" y="88" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="74" y="110" width="52" height="16" rx="4" fill="#B8E8F5"/>
+                        <rect x="62" y="132" width="76" height="18" rx="4" fill="white"/>
+                        <rect x="48" y="156" width="104" height="20" rx="5" fill="white"/>
+                        <rect x="35" y="182" width="130" height="22" rx="5" fill="white"/>
+                        <text x="100" y="232" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="28" font-weight="700" fill="white" letter-spacing="4">HELIX LABS</text>
+                    </svg>
+                    <span>On Dark / Black</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── BRAND GUIDE: Color Palette ─── -->
+        <section class="brand-showcase">
+            <div class="brand-showcase-label">02 — Color</div>
+            <h2 class="brand-showcase-title">Color Palette</h2>
+            <p class="brand-showcase-desc">The Helix Labs palette is built around deep teal — conveying scientific authority — accented by ice blue for energy and precision.</p>
+
+            <div class="color-palette-grid">
+                <div class="color-swatch-card swatch-on-dark" style="background: #2D6B77;">
+                    <div class="swatch-name">Brand Teal</div>
+                    <div class="swatch-values">HEX #2D6B77<br>RGB 45, 107, 119</div>
+                </div>
+                <div class="color-swatch-card swatch-on-dark" style="background: #1E4A53;">
+                    <div class="swatch-name">Deep Teal</div>
+                    <div class="swatch-values">HEX #1E4A53<br>RGB 30, 74, 83</div>
+                </div>
+                <div class="color-swatch-card swatch-on-dark" style="background: #183D44;">
+                    <div class="swatch-name">Midnight Teal</div>
+                    <div class="swatch-values">HEX #183D44<br>RGB 24, 61, 68</div>
+                </div>
+                <div class="color-swatch-card swatch-on-light" style="background: #B8E8F5;">
+                    <div class="swatch-name">Ice Blue</div>
+                    <div class="swatch-values">HEX #B8E8F5<br>RGB 184, 232, 245</div>
+                </div>
+                <div class="color-swatch-card swatch-on-light" style="background: #FFFFFF;">
+                    <div class="swatch-name">White</div>
+                    <div class="swatch-values">HEX #FFFFFF<br>RGB 255, 255, 255</div>
+                </div>
+                <div class="color-swatch-card swatch-on-dark" style="background: #0A0A0A;">
+                    <div class="swatch-name">Void Black</div>
+                    <div class="swatch-values">HEX #0A0A0A<br>RGB 10, 10, 10</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── BRAND GUIDE: Typography ─── -->
+        <section class="brand-showcase">
+            <div class="brand-showcase-label">03 — Typography</div>
+            <h2 class="brand-showcase-title">Type System</h2>
+            <p class="brand-showcase-desc">Three typefaces, each with a clear role. Rajdhani for the wordmark, Space Grotesk for headlines, IBM Plex Sans for body text.</p>
+
+            <div class="type-specimens-list">
+                <div class="type-specimen-card">
+                    <div class="type-meta-row">
+                        <div class="type-meta-item"><span class="t-label">Typeface</span><span class="t-value">Rajdhani</span></div>
+                        <div class="type-meta-item"><span class="t-label">Weight</span><span class="t-value">700 Bold</span></div>
+                        <div class="type-meta-item"><span class="t-label">Role</span><span class="t-value">Wordmark / Logo Type</span></div>
+                        <div class="type-meta-item"><span class="t-label">Tracking</span><span class="t-value">+60</span></div>
+                    </div>
+                    <div class="type-display-wordmark">HELIX LABS</div>
+                    <div class="type-alphabet" style="font-family: 'Rajdhani', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+                </div>
+
+                <div class="type-specimen-card">
+                    <div class="type-meta-row">
+                        <div class="type-meta-item"><span class="t-label">Typeface</span><span class="t-value">Space Grotesk</span></div>
+                        <div class="type-meta-item"><span class="t-label">Weights</span><span class="t-value">500 — 700</span></div>
+                        <div class="type-meta-item"><span class="t-label">Role</span><span class="t-value">Headlines / UI</span></div>
+                    </div>
+                    <div class="type-display-heading">DNA analysis,<br>simplified.</div>
+                    <div class="type-alphabet" style="font-family: 'Space Grotesk', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789</div>
+                </div>
+
+                <div class="type-specimen-card">
+                    <div class="type-meta-row">
+                        <div class="type-meta-item"><span class="t-label">Typeface</span><span class="t-value">IBM Plex Sans</span></div>
+                        <div class="type-meta-item"><span class="t-label">Weights</span><span class="t-value">300 — 500</span></div>
+                        <div class="type-meta-item"><span class="t-label">Role</span><span class="t-value">Body / Supporting</span></div>
+                    </div>
+                    <div class="type-display-body">Helix Labs builds portable DNA sequencing platforms that deliver results in under 90 minutes. Our technology puts the power of a full genomics lab in your hands — wherever the science takes you.</div>
+                    <div class="type-alphabet" style="font-family: 'IBM Plex Sans', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789</div>
+                </div>
+            </div>
+        </section>
+
         <section class="content-section">
             <h2>Branding Capabilities</h2>
 
@@ -581,9 +919,6 @@
         </section>
 
         <section class="gallery-section">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="helix-labs-brand-guide.html" style="display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--void); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; letter-spacing: -0.01em;">View Full Brand Guide</a>
-            </div>
             <div class="gallery-grid">
                 <img src="assets/case-studies/HELIX/Helix-labs (1).png" alt="Helix Labs brand collateral" class="gallery-full">
                 <img src="assets/case-studies/HELIX/Helix-labs (2).png" alt="Helix Labs product brochure">
