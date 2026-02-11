@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Helix Labs case study - A LYCKA Digital test project demonstrating go-to-market brand assets, print collateral, and tradeshow design capabilities">
     <title>Helix Labs Case Study — LYCKA Digital</title>
+    <link rel="icon" type="image/png" href="assets/images/Lycka-logo.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,9 @@
             --void: #0A0A0A;
             --ghost: #F5F5F5;
             --signal: #FFFFFF;
-            --bioelectric: #00FFB3;
+            --gold: #D4A828;
+            --gold-dim: rgba(212,168,40,0.15);
+            --gold-glow: rgba(212,168,40,0.4);
             --muted: #666666;
         }
 
@@ -95,7 +98,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--bioelectric);
+            background: var(--gold);
             transition: width 0.4s ease;
         }
 
@@ -208,7 +211,7 @@
         }
 
         .highlight {
-            color: var(--bioelectric);
+            color: var(--gold);
             font-weight: 500;
         }
 
@@ -263,14 +266,14 @@
         }
 
         .stat-card:hover {
-            border-color: var(--bioelectric);
-            background: rgba(0, 255, 179, 0.03);
+            border-color: var(--gold);
+            background: var(--gold-dim);
         }
 
         .stat-number {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--bioelectric);
+            color: var(--gold);
             margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
@@ -308,7 +311,7 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--bioelectric);
+            background: var(--gold);
             color: var(--void);
             text-decoration: none;
             border-radius: 8px;
@@ -320,7 +323,7 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 255, 179, 0.3);
+            box-shadow: 0 15px 40px var(--gold-glow);
         }
 
         /* Back Link */
@@ -335,7 +338,7 @@
         }
 
         .back-link:hover {
-            color: var(--bioelectric);
+            color: var(--gold);
         }
 
         .back-link::before {
@@ -394,7 +397,7 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 20px;
-            color: var(--bioelectric);
+            color: var(--gold);
         }
 
         .footer-section ul {
@@ -579,7 +582,7 @@
 
         <section class="gallery-section">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="helix-labs-brand-guide.html" style="display: inline-block; padding: 14px 32px; background: var(--bioelectric); color: var(--void); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; letter-spacing: -0.01em;">View Full Brand Guide</a>
+                <a href="helix-labs-brand-guide.html" style="display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--void); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; letter-spacing: -0.01em;">View Full Brand Guide</a>
             </div>
             <div class="gallery-grid">
                 <img src="assets/case-studies/HELIX/Helix-labs (1).png" alt="Helix Labs brand collateral" class="gallery-full">

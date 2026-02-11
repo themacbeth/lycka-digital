@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ChromaIO case study - A LYCKA Digital test project demonstrating brand identity, web design, and interactive development capabilities">
     <title>ChromaIO Case Study — LYCKA Digital</title>
-    
+    <link rel="icon" type="image/png" href="assets/images/Lycka-logo.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,9 @@
             --void: #0A0A0A;
             --ghost: #F5F5F5;
             --signal: #FFFFFF;
-            --bioelectric: #00FFB3;
+            --gold: #D4A828;
+            --gold-dim: rgba(212,168,40,0.15);
+            --gold-glow: rgba(212,168,40,0.4);
             --muted: #666666;
         }
 
@@ -95,7 +98,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--bioelectric);
+            background: var(--gold);
             transition: width 0.4s ease;
         }
 
@@ -208,7 +211,7 @@
         }
 
         .highlight {
-            color: var(--bioelectric);
+            color: var(--gold);
             font-weight: 500;
         }
 
@@ -370,7 +373,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: var(--bioelectric);
+            background: var(--gold);
             flex-shrink: 0;
         }
 
@@ -565,7 +568,7 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--bioelectric);
+            background: var(--gold);
             color: var(--void);
             text-decoration: none;
             border-radius: 8px;
@@ -577,7 +580,7 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 255, 179, 0.3);
+            box-shadow: 0 15px 40px var(--gold-glow);
         }
 
         /* Back Link */
@@ -592,7 +595,7 @@
         }
 
         .back-link:hover {
-            color: var(--bioelectric);
+            color: var(--gold);
         }
 
         .back-link::before {
@@ -651,7 +654,7 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 20px;
-            color: var(--bioelectric);
+            color: var(--gold);
         }
 
         .footer-section ul {
