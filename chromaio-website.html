@@ -354,6 +354,8 @@
         .card-canvas-wrap {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .vx-card-body {
@@ -1097,7 +1099,7 @@
 
                 <a href="#" class="vx-card">
                     <div class="vx-card-image">
-                        <canvas class="card-canvas-wrap" id="cardCanvas1"></canvas>
+                        <img class="card-canvas-wrap" src="assets/case-studies/Chromaio/chromaio-assets (1).png" alt="Real-Time Peak Detection">
                     </div>
                     <div class="vx-card-body">
                         <div class="vx-card-category">Analysis</div>
@@ -1109,7 +1111,7 @@
 
                 <a href="#" class="vx-card">
                     <div class="vx-card-image">
-                        <canvas class="card-canvas-wrap" id="cardCanvas2"></canvas>
+                        <img class="card-canvas-wrap" src="assets/case-studies/Chromaio/chromaio-assets (8).png" alt="Multi-Technique Support">
                     </div>
                     <div class="vx-card-body">
                         <div class="vx-card-category">Visualization</div>
@@ -1121,7 +1123,7 @@
 
                 <a href="#" class="vx-card">
                     <div class="vx-card-image">
-                        <canvas class="card-canvas-wrap" id="cardCanvas3"></canvas>
+                        <img class="card-canvas-wrap" src="assets/case-studies/Chromaio/chromaio-assets (7).png" alt="Cloud-First Teamwork">
                     </div>
                     <div class="vx-card-body">
                         <div class="vx-card-category">Collaboration</div>
@@ -1501,93 +1503,6 @@
         window.addEventListener('resize', resize);
         animate();
     })();
-
-    // ─── CARD CANVASES ───
-    function initCardCanvas(id, peakConfig, bgColor) {
-        const canvas = document.getElementById(id);
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let t = Math.random() * 100;
-
-        function resize() {
-            const r = canvas.parentElement.getBoundingClientRect();
-            canvas.width = r.width;
-            canvas.height = r.height;
-        }
-
-        function gaussian(x, mu, sigma) {
-            return Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma));
-        }
-
-        function draw() {
-            const W = canvas.width, H = canvas.height;
-            ctx.clearRect(0, 0, W, H);
-            ctx.fillStyle = bgColor;
-            ctx.fillRect(0, 0, W, H);
-
-            // Grid
-            ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-            ctx.lineWidth = 1;
-            for (let x = 0; x < W; x += 32) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-            for (let y = 0; y < H; y += 32) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
-
-            const baseY = H * 0.82;
-
-            peakConfig.forEach(pk => {
-                const animAmp = pk.amp * (0.93 + 0.07 * Math.sin(t * 0.6 + pk.phase));
-                const grad = ctx.createLinearGradient(0, baseY - H * 0.7, 0, baseY);
-                grad.addColorStop(0, `rgba(${pk.color},0.4)`);
-                grad.addColorStop(1, `rgba(${pk.color},0)`);
-
-                ctx.beginPath();
-                for (let px = 0; px <= W; px += 2) {
-                    const xn = px / W;
-                    const y = baseY - H * 0.75 * animAmp * gaussian(xn, pk.mu, pk.sigma);
-                    if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
-                }
-                ctx.lineTo(W, baseY); ctx.lineTo(0, baseY); ctx.closePath();
-                ctx.fillStyle = grad; ctx.fill();
-
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(${pk.color},1)`;
-                ctx.lineWidth = 1.8;
-                for (let px = 0; px <= W; px += 2) {
-                    const xn = px / W;
-                    const y = baseY - H * 0.75 * animAmp * gaussian(xn, pk.mu, pk.sigma);
-                    if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
-                }
-                ctx.stroke();
-            });
-
-            t += 0.018;
-            requestAnimationFrame(draw);
-        }
-
-        resize();
-        new ResizeObserver(resize).observe(canvas.parentElement);
-        draw();
-    }
-
-    initCardCanvas('cardCanvas1',
-        [{ mu:0.25, sigma:0.06, amp:0.8, color:'43,111,247', phase:0 },
-         { mu:0.55, sigma:0.04, amp:0.55, color:'10,191,176', phase:1 },
-         { mu:0.78, sigma:0.05, amp:0.38, color:'232,160,32', phase:2 }],
-        '#0D1420'
-    );
-
-    initCardCanvas('cardCanvas2',
-        [{ mu:0.2, sigma:0.05, amp:0.65, color:'10,191,176', phase:0.3 },
-         { mu:0.45, sigma:0.07, amp:0.9, color:'43,111,247', phase:1.2 },
-         { mu:0.72, sigma:0.04, amp:0.42, color:'232,92,32', phase:2.1 }],
-        '#0A1A18'
-    );
-
-    initCardCanvas('cardCanvas3',
-        [{ mu:0.3, sigma:0.05, amp:0.7, color:'232,160,32', phase:0.7 },
-         { mu:0.58, sigma:0.06, amp:0.85, color:'232,92,32', phase:1.5 },
-         { mu:0.8, sigma:0.04, amp:0.35, color:'10,191,176', phase:2.5 }],
-        '#1A1200'
-    );
 
     // ─── STATEMENT CANVAS — Flowing particles ───
     (function() {

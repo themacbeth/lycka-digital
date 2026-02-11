@@ -214,8 +214,30 @@
 
         /* Image Showcase */
         .showcase-section {
-            padding: 6rem 0;
+            padding: 6rem 0 2rem;
             max-width: 100%;
+        }
+
+        .showcase-link-wrap {
+            text-align: center;
+            padding-bottom: 4rem;
+        }
+
+        .showcase-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3B82F6;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s, gap 0.3s;
+        }
+
+        .showcase-link:hover {
+            color: #60A5FA;
+            gap: 0.75rem;
         }
 
         .browser-mockup {
@@ -579,22 +601,9 @@
 
         <section class="content-section">
             <h2>What This Project Demonstrates</h2>
-            <p>ChromaIO is a fictional SaaS product we created from scratch to showcase what LYCKA delivers for science and technology companies. Every element — from the brand identity to the fully functional website — was designed and built in-house to demonstrate our end-to-end capabilities.</p>
+            <p>ChromaIO is a fictional SaaS product we created from scratch to showcase what LYCKA delivers for science and technology companies. Every element, from the brand identity to the website, was designed and built in-house to demonstrate our end-to-end capabilities.</p>
 
             <p>This test case study shows how we <span class="highlight">take a concept from zero to a market-ready brand presence</span>, covering strategy, visual identity, web design, and interactive development in a single engagement.</p>
-        </section>
-
-        <section class="content-section">
-            <h2>Capabilities Demonstrated</h2>
-
-            <h3>Brand Identity Design</h3>
-            <p>We built a complete visual identity system from the ground up: logo, color palette, typography hierarchy, and brand guidelines. The ChromaIO identity balances scientific credibility with modern SaaS aesthetics — showing how we help technical companies feel approachable without losing authority.</p>
-
-            <h3>Web Design & Development</h3>
-            <p>The ChromaIO website is a fully responsive, production-quality landing page built with clean HTML, CSS, and JavaScript. We designed and developed the layout, content hierarchy, pricing structure, mobile app showcase, and conversion-focused CTAs — the complete toolkit a SaaS product needs to launch.</p>
-
-            <h3>Interactive & Motion Design</h3>
-            <p>We built custom canvas-based animations throughout the site: real-time chromatography visualizations, particle networks, flowing waveforms, and animated data charts. These aren't libraries or templates — they're hand-coded interactive elements that bring the product story to life and demonstrate our ability to create bespoke digital experiences.</p>
         </section>
 
         <section class="showcase-section">
@@ -608,6 +617,25 @@
                     <iframe src="chromaio-website.html" title="ChromaIO Website Preview"></iframe>
                 </div>
             </div>
+        </section>
+
+        <div class="showcase-link-wrap">
+            <a href="chromaio-website.html" target="_blank" class="showcase-link">
+                View Full Page <span>&rarr;</span>
+            </a>
+        </div>
+
+        <section class="content-section">
+            <h2>Capabilities Demonstrated</h2>
+
+            <h3>Brand Identity Design</h3>
+            <p>We built a complete visual identity system from the ground up: logo, color palette, typography hierarchy, and brand guidelines. The ChromaIO identity balances scientific credibility with modern SaaS aesthetics, showing how we help technical companies feel approachable without losing authority.</p>
+
+            <h3>Web Design & Development</h3>
+            <p>The ChromaIO website is a fully responsive, production-quality landing page built with clean HTML, CSS, and JavaScript. We designed and developed the layout, content hierarchy, pricing structure, mobile app showcase, and conversion-focused CTAs, the complete toolkit a SaaS product needs to launch.</p>
+
+            <h3>Interactive & Motion Design</h3>
+            <p>We built custom canvas-based animations throughout the site: real-time chromatography visualizations, particle networks, flowing waveforms, and animated data charts. These aren't libraries or templates, they're hand-coded interactive elements that bring the product story to life and demonstrate our ability to create bespoke digital experiences.</p>
         </section>
 
         <section class="stats-section">
