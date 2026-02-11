@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -287,46 +287,256 @@
         }
 
         /* Stats Grid */
-        .stats-section {
-            padding: 4rem 0;
+        /* Mobile App Feature Section */
+        .mobile-section {
+            padding: 100px 56px;
+            background: #0C0C0A;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        #mobileCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+        }
+
+        .mobile-inner {
+            position: relative;
+            z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        .section-eyebrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #E8A020;
+            margin-bottom: 20px;
         }
 
-        .stat-card:hover {
-            border-color: var(--bioelectric);
-            background: rgba(0, 255, 179, 0.03);
+        .section-headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(36px, 4vw, 56px);
+            font-weight: 500;
+            color: white;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 28px;
         }
 
-        .stat-number {
-            font-size: 3.5rem;
+        .section-headline em {
+            font-style: italic;
+            color: #E8A020;
+        }
+
+        .mobile-content p {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .mobile-features {
+            list-style: none;
+            margin-bottom: 44px;
+        }
+
+        .mobile-features li {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .mobile-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--bioelectric);
+            flex-shrink: 0;
+        }
+
+        .phone-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .phone {
+            width: 240px;
+            background: #1A1A18;
+            border-radius: 36px;
+            padding: 14px;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.1),
+                0 40px 80px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+            flex-shrink: 0;
+        }
+
+        .phone.phone-back {
+            margin-top: 40px;
+            opacity: 0.6;
+            transform: scale(0.92);
+        }
+
+        .phone-notch {
+            width: 80px;
+            height: 20px;
+            background: #0C0C0A;
+            border-radius: 0 0 12px 12px;
+            margin: 0 auto 10px;
+        }
+
+        .phone-screen {
+            background: #111110;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 9/19;
+        }
+
+        .app-header {
+            background: #1A1A18;
+            padding: 16px 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .app-logo-small {
+            font-family: 'Figtree', sans-serif;
+            font-size: 14px;
             font-weight: 700;
-            color: var(--bioelectric);
-            margin-bottom: 0.75rem;
+            color: white;
             letter-spacing: -0.02em;
         }
 
-        .stat-label {
-            color: var(--ghost);
-            font-size: 1rem;
-            font-weight: 300;
+        .app-status {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: #0ABFB0;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
+
+        .app-body { padding: 14px 12px; }
+
+        .app-section-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .app-chart {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px 10px 8px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .mini-peak-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 8px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 6px;
+        }
+
+        .app-stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .app-stat {
+            background: rgba(255,255,255,0.04);
+            border-radius: 6px;
+            padding: 8px;
+        }
+
+        .app-stat-val {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0ABFB0;
+            line-height: 1;
+        }
+
+        .app-stat-lbl {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 8px;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 3px;
+        }
+
+        .app-list-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .app-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .app-item-name {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 10px;
+            color: rgba(255,255,255,0.7);
+            flex: 1;
+        }
+
+        .app-item-val {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: #0ABFB0;
+        }
+
+        .app-nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 8px;
+            background: rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin-top: 6px;
+        }
+
+        .app-nav-icon {
+            font-size: 14px;
+            opacity: 0.4;
+        }
+
+        .app-nav-icon.active { opacity: 1; }
 
         /* CTA Section */
         .cta-section {
@@ -523,12 +733,17 @@
                 font-size: 1rem;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .mobile-section {
+                padding: 60px 24px;
             }
 
-            .stat-number {
-                font-size: 2.5rem;
+            .mobile-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .phone-wrap {
+                justify-content: center;
             }
 
             .cta-section h2 {
@@ -638,28 +853,104 @@
             <p>We built custom canvas-based animations throughout the site: real-time chromatography visualizations, particle networks, flowing waveforms, and animated data charts. These aren't libraries or templates, they're hand-coded interactive elements that bring the product story to life and demonstrate our ability to create bespoke digital experiences.</p>
         </section>
 
-        <section class="stats-section">
-            <div class="content-section" style="padding: 0;">
-                <h2>Project Scope</h2>
-                <p>This test project demonstrates the full range of deliverables LYCKA produces for a typical SaaS brand engagement.</p>
-            </div>
+        <section class="mobile-section">
+            <canvas id="mobileCanvas"></canvas>
+            <div class="mobile-inner">
+                <div class="mobile-content">
+                    <div class="section-eyebrow">Mobile App</div>
+                    <h2 class="section-headline">Your lab in your <em>pocket</em></h2>
+                    <p>Review results, approve batches, and monitor runs from anywhere. The ChromaIO mobile app brings full analytical power to iOS and Android.</p>
+                    <ul class="mobile-features">
+                        <li>Live chromatogram streaming from instrument to phone</li>
+                        <li>Push notifications for run completion & anomalies</li>
+                        <li>Approve and sign off on results remotely</li>
+                        <li>Full audit trail accessible on mobile</li>
+                        <li>Offline mode — data syncs when back online</li>
+                    </ul>
+                </div>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Complete brand identity system</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Custom canvas animations</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Responsive across all devices</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">External libraries or templates</div>
+                <div class="phone-wrap">
+                    <div class="phone phone-back">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="app-header">
+                                <div class="app-logo-small">ChromaIO</div>
+                                <div class="app-status">● Live</div>
+                            </div>
+                            <div class="app-body">
+                                <div class="app-section-title">Recent Runs</div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#E8A020"></div>
+                                    <div class="app-item-name">Sample B-04</div>
+                                    <div class="app-item-val">98.2%</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#0ABFB0"></div>
+                                    <div class="app-item-name">Control C-01</div>
+                                    <div class="app-item-val">99.7%</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#2B6FF7"></div>
+                                    <div class="app-item-name">Sample A-12</div>
+                                    <div class="app-item-val">97.1%</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#E85C20"></div>
+                                    <div class="app-item-name">Sample A-13</div>
+                                    <div class="app-item-val">96.4%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phone">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="app-header">
+                                <div class="app-logo-small">ChromaIO</div>
+                                <div class="app-status">● Live</div>
+                            </div>
+                            <div class="app-body">
+                                <div class="app-section-title">Run 0482 — Sample A-01</div>
+                                <div class="app-chart">
+                                    <div class="mini-peak-label">Chromatogram</div>
+                                    <canvas id="phoneChart" width="200" height="60"></canvas>
+                                </div>
+                                <div class="app-stats-row">
+                                    <div class="app-stat">
+                                        <div class="app-stat-val">98.7%</div>
+                                        <div class="app-stat-lbl">Purity</div>
+                                    </div>
+                                    <div class="app-stat">
+                                        <div class="app-stat-val" style="color: #E8A020">3</div>
+                                        <div class="app-stat-lbl">Peaks</div>
+                                    </div>
+                                </div>
+                                <div class="app-section-title" style="margin-top:10px">Peak Analysis</div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#2B6FF7"></div>
+                                    <div class="app-item-name">Peak 1 — 1.24 min</div>
+                                    <div class="app-item-val">42.3%</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#0ABFB0"></div>
+                                    <div class="app-item-name">Peak 2 — 2.87 min</div>
+                                    <div class="app-item-val">38.9%</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-dot" style="background:#E8A020"></div>
+                                    <div class="app-item-name">Peak 3 — 4.11 min</div>
+                                    <div class="app-item-val">17.5%</div>
+                                </div>
+                            </div>
+                            <div class="app-nav-bar">
+                                <span class="app-nav-icon active">📊</span>
+                                <span class="app-nav-icon">🔬</span>
+                                <span class="app-nav-icon">📋</span>
+                                <span class="app-nav-icon">⚙️</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -707,6 +998,96 @@
     <script>
     const nav = document.getElementById('navbar');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+    // ─── MOBILE CANVAS — Flowing waves ───
+    (function() {
+        const canvas = document.getElementById('mobileCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, t = 0;
+
+        function resize() {
+            const r = canvas.parentElement.getBoundingClientRect();
+            W = canvas.width = r.width;
+            H = canvas.height = r.height;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            for (let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                const colors = ['43,111,247', '10,191,176', '232,160,32', '232,92,32', '10,191,176'];
+                const offsets = [0, 0.4, 0.8, 1.2, 1.6];
+                for (let x = 0; x <= W; x += 4) {
+                    const y = H * 0.5 + Math.sin(x * 0.008 + t + offsets[i]) * H * 0.15 +
+                              Math.sin(x * 0.015 + t * 0.7 + offsets[i] * 2) * H * 0.08;
+                    if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.strokeStyle = `rgba(${colors[i]},0.4)`;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            }
+            t += 0.008;
+            requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+    })();
+
+    // ─── PHONE CHART ───
+    (function() {
+        const canvas = document.getElementById('phoneChart');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width, H = canvas.height;
+        let t = 0;
+
+        function gaussian(x, mu, sigma) {
+            return Math.exp(-((x - mu) ** 2) / (2 * sigma * sigma));
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            const baseY = H * 0.88;
+            const peaks = [
+                {mu:0.2, sigma:0.07, amp:0.8, c:'43,111,247'},
+                {mu:0.5, sigma:0.05, amp:0.95, c:'10,191,176'},
+                {mu:0.78, sigma:0.06, amp:0.5, c:'232,160,32'},
+            ];
+
+            peaks.forEach(pk => {
+                const a = pk.amp * (0.95 + 0.05 * Math.sin(t + pk.mu * 10));
+                const grad = ctx.createLinearGradient(0, 0, 0, baseY);
+                grad.addColorStop(0, `rgba(${pk.c},0.5)`);
+                grad.addColorStop(1, `rgba(${pk.c},0)`);
+
+                ctx.beginPath();
+                for (let px = 0; px <= W; px += 1) {
+                    const xn = px / W;
+                    const y = baseY - baseY * 0.9 * a * gaussian(xn, pk.mu, pk.sigma);
+                    if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+                }
+                ctx.lineTo(W, baseY); ctx.lineTo(0, baseY); ctx.closePath();
+                ctx.fillStyle = grad; ctx.fill();
+
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(${pk.c},1)`;
+                ctx.lineWidth = 1.5;
+                for (let px = 0; px <= W; px += 1) {
+                    const xn = px / W;
+                    const y = baseY - baseY * 0.9 * a * gaussian(xn, pk.mu, pk.sigma);
+                    if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+                }
+                ctx.stroke();
+            });
+
+            t += 0.025;
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
     </script>
 </body>
 </html>
