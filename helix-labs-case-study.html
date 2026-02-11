@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Helix Labs case study - Go-to-market brand assets and tradeshow collateral by LYCKA Digital">
+    <meta name="description" content="Helix Labs case study - A LYCKA Digital test project demonstrating go-to-market brand assets, print collateral, and tradeshow design capabilities">
     <title>Helix Labs Case Study — LYCKA Digital</title>
 
     <!-- Fonts -->
@@ -34,41 +34,77 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER */
-        header {
-            padding: 2rem 5%;
+        /* NAV — matches index.html */
+        nav#navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 24px 60px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            justify-content: space-between;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+            transition: background 0.4s;
+        }
+
+        nav#navbar.scrolled {
+            background: rgba(0,0,0,0.96);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .logo a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             color: var(--signal);
             text-decoration: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        nav ul {
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 48px;
             list-style: none;
         }
 
-        nav a {
-            color: var(--ghost);
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+            position: relative;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--bioelectric);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bioelectric);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--signal);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* CASE STUDY CONTENT */
@@ -399,14 +435,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1.5rem 5%;
+            nav#navbar {
+                padding: 16px 24px;
             }
 
-            nav ul {
-                gap: 1.5rem;
+            .nav-links {
+                gap: 24px;
             }
 
             .case-hero {
@@ -480,18 +514,15 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">LYCKA</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="mailto:hello@lycka.digital">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav id="navbar">
+        <a href="index.html" class="logo"><img src="assets/images/Lycka-logo.png"> LYCKA</a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="case-hero">
@@ -502,20 +533,20 @@
             </div>
 
             <h1>Helix Labs</h1>
-            <p class="case-hero-subtitle">Launch-ready brand assets and tradeshow collateral for a next-generation DNA analysis platform</p>
+            <p class="case-hero-subtitle">A test case study demonstrating LYCKA's brand asset design, print collateral, and tradeshow capabilities</p>
 
             <div class="project-meta">
                 <div class="meta-item">
-                    <div class="meta-label">Client</div>
-                    <div class="meta-value">Helix Labs</div>
+                    <div class="meta-label">Type</div>
+                    <div class="meta-value">Test Case Study</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Industry</div>
-                    <div class="meta-value">Genomics / DNA Analysis</div>
+                    <div class="meta-value">Genomics / Biotech</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Services</div>
-                    <div class="meta-value">Brand Assets, Tradeshow</div>
+                    <div class="meta-value">Brand Assets, Print, Tradeshow</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Year</div>
@@ -525,30 +556,31 @@
         </section>
 
         <section class="content-section">
-            <h2>The Challenge</h2>
-            <p>Helix Labs had built a breakthrough portable DNA sequencing platform capable of delivering results in under 90 minutes. Their technology was validated, their pipeline was strong, and Series A funding was secured. What they didn't have was a brand presence that matched their ambition.</p>
+            <h2>What This Project Demonstrates</h2>
+            <p>Helix Labs is a fictional genomics company we built from scratch to demonstrate what LYCKA delivers: <span class="highlight">complete brand identity and print-ready collateral</span> for science and technology companies. Every asset shown here — from the logo to the letterhead to the outdoor signage — was designed and produced in-house.</p>
 
-            <p>With their first major product launch approaching and booth space booked at three flagship genomics conferences, Helix Labs needed a complete suite of go-to-market materials. They had weeks, not months, and everything needed to work together seamlessly — from one-pagers handed to investors to 10-foot banners commanding attention on the show floor.</p>
-
-            <p>The challenge was clear: <span class="highlight">translate complex science into collateral that sells</span>, without sacrificing the technical credibility their audience demands.</p>
+            <p>This test case study exists to show our full branding and print production capabilities in one place.</p>
         </section>
 
         <section class="content-section">
-            <h2>Our Approach</h2>
-            <p>LYCKA embedded with the Helix Labs team for a focused three-week sprint, working across brand assets and tradeshow collateral simultaneously to meet their launch timeline.</p>
+            <h2>Branding Capabilities</h2>
 
-            <h3>Go-to-Market Brand Assets</h3>
-            <p>From one-pagers to product brochures, we created the collateral Helix Labs needed to launch with confidence. Every asset was designed to reinforce the brand while serving its specific purpose — whether that meant distilling a complex workflow into a single visual for investors, or building a spec sheet that gave procurement teams exactly what they needed to approve a purchase order.</p>
+            <h3>Logo & Visual Identity</h3>
+            <p>We designed the Helix Labs logo from concept to final vector — a geometric DNA-inspired mark built from clean, modular shapes. The hourglass form references both the double helix structure and the idea of time-sensitive analysis. We defined the full identity system: primary and secondary color palettes, clear space rules, minimum sizing, and usage guidelines across light and dark backgrounds.</p>
 
-            <p>We developed a modular design system that allowed Helix Labs to generate new materials in-house after launch, ensuring brand consistency as their needs scaled.</p>
+            <h3>Brand System & Guidelines</h3>
+            <p>Beyond the logo, we built a complete brand system: typography hierarchy, color specifications for both digital (HEX/RGB) and print (CMYK/Pantone), iconography style, and layout principles. The system is documented in a brand guide that ensures consistency whether Helix Labs is producing a business card or a 10-foot banner.</p>
 
-            <h3>Tradeshow & Conference Collateral</h3>
-            <p>Standing out at the booth takes more than good science. We designed tradeshow graphics, banners, signage, and leave-behinds that grabbed attention in crowded exhibition halls and kept Helix Labs top-of-mind long after the event ended.</p>
+            <h3>Print Production</h3>
+            <p>We designed and prepared print-ready files for every touchpoint a biotech company needs at launch: business cards, letterhead, envelopes, one-pagers, product brochures, and large-format tradeshow signage. Every file was delivered production-ready with proper bleed, trim marks, and color profiles — no handoff gaps between design and print.</p>
 
-            <p>The booth design used bold structural graphics paired with clean data visualizations, creating an environment that invited conversation. Every touchpoint — from the retractable banners to the business cards — reinforced the same narrative: DNA analysis, simplified.</p>
+            <p>This is what sets LYCKA apart: we don't just design it, we <span class="highlight">deliver it ready to print</span>. Our team understands CMYK color management, substrate considerations, and vendor specifications so your brand looks exactly as intended in the real world.</p>
         </section>
 
         <section class="gallery-section">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="helix-labs-brand-guide.html" style="display: inline-block; padding: 14px 32px; background: var(--bioelectric); color: var(--void); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; letter-spacing: -0.01em;">View Full Brand Guide</a>
+            </div>
             <div class="gallery-grid">
                 <img src="assets/case-studies/HELIX/Helix-labs (1).png" alt="Helix Labs brand collateral" class="gallery-full">
                 <img src="assets/case-studies/HELIX/Helix-labs (2).png" alt="Helix Labs product brochure">
@@ -560,39 +592,39 @@
 
         <section class="stats-section">
             <div class="content-section" style="padding: 0;">
-                <h2>The Impact</h2>
-                <p>Helix Labs launched at AGBT, ASHG, and Genomics Live with a unified brand presence that turned heads and started conversations. The results spoke for themselves.</p>
+                <h2>Deliverables</h2>
+                <p>Everything a biotech company needs to go from stealth to stage-ready — designed, produced, and delivered by LYCKA.</p>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Conference launches in 6 weeks</div>
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Complete logo & identity system</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">Qualified leads from events</div>
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Print-ready collateral pieces</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">45%</div>
-                    <div class="stat-label">Demo-to-trial conversion rate</div>
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Brand guide with full specifications</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Enterprise pilots signed at launch</div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Production-ready file delivery</div>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
-            <p>The brand assets became Helix Labs' primary sales toolkit, with the one-pager alone credited in closing three of their first enterprise deals. Conference attendees consistently commented that the booth "looked like a company ten times their size."</p>
+            <p>From vector logo files to large-format print specs, every deliverable in this project was produced to production standards. LYCKA handles the full pipeline — concept, design, brand system, and print-ready output — so there's no gap between what you see on screen and what shows up at your door.</p>
 
-            <p>More importantly, the modular design system we built allowed Helix Labs to maintain brand consistency as they expanded into new markets — producing new materials internally without needing to start from scratch each time.</p>
+            <p>If you need an agency that understands both branding and print production for science and technology companies, this is what working with us looks like.</p>
         </section>
 
         <section class="cta-section">
-            <h2>Ready to launch with confidence?</h2>
-            <p>Let's build the brand assets that match your ambition.</p>
+            <h2>Like what you see?</h2>
+            <p>This is a test case study. Imagine what we'll build for your real one.</p>
             <a href="mailto:hello@lycka.digital" class="cta-button">Start a Project</a>
         </section>
     </main>
@@ -623,5 +655,10 @@
             <p class="footer-copy">&copy; 2026 LYCKA. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+    </script>
 </body>
 </html>

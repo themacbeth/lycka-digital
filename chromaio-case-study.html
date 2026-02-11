@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ChromaIO case study - Brand identity and web design by LYCKA Digital">
+    <meta name="description" content="ChromaIO case study - A LYCKA Digital test project demonstrating brand identity, web design, and interactive development capabilities">
     <title>ChromaIO Case Study — LYCKA Digital</title>
     
     <!-- Fonts -->
@@ -34,41 +34,77 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER - Your exact styling */
-        header {
-            padding: 2rem 5%;
+        /* NAV — matches index.html */
+        nav#navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 24px 60px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            justify-content: space-between;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+            transition: background 0.4s;
+        }
+
+        nav#navbar.scrolled {
+            background: rgba(0,0,0,0.96);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .logo a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             color: var(--signal);
             text-decoration: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        nav ul {
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 48px;
             list-style: none;
         }
 
-        nav a {
-            color: var(--ghost);
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+            position: relative;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--bioelectric);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--bioelectric);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--signal);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* CASE STUDY CONTENT */
@@ -424,14 +460,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1.5rem 5%;
+            nav#navbar {
+                padding: 16px 24px;
             }
 
-            nav ul {
-                gap: 1.5rem;
+            .nav-links {
+                gap: 24px;
             }
 
             .case-hero {
@@ -501,19 +535,15 @@
     </style>
 </head>
 <body>
-    <!-- HEADER - Your exact navigation -->
-    <header>
-        <div class="logo">
-            <a href="index.html">LYCKA</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="mailto:hello@lycka.digital">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav id="navbar">
+        <a href="index.html" class="logo"><img src="assets/images/Lycka-logo.png"> LYCKA</a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- CASE STUDY CONTENT -->
     <main>
@@ -525,48 +555,46 @@
             </div>
             
             <h1>ChromaIO</h1>
-            <p class="case-hero-subtitle">Modernizing chromatography analysis software for next-generation researchers</p>
-            
+            <p class="case-hero-subtitle">A test case study demonstrating LYCKA's brand identity, web design, and interactive development capabilities</p>
+
             <div class="project-meta">
                 <div class="meta-item">
-                    <div class="meta-label">Client</div>
-                    <div class="meta-value">ChromaIO Labs</div>
+                    <div class="meta-label">Type</div>
+                    <div class="meta-value">Test Case Study</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Industry</div>
-                    <div class="meta-value">Lab Software</div>
+                    <div class="meta-value">Lab Software / SaaS</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Services</div>
-                    <div class="meta-value">Brand, Web Design</div>
+                    <div class="meta-value">Brand, Web, Interactive</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Year</div>
-                    <div class="meta-value">2024</div>
+                    <div class="meta-value">2025</div>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
-            <h2>The Challenge</h2>
-            <p>ChromaIO came to LYCKA with a powerful chromatography analysis platform hampered by outdated branding and a confusing market position. Despite having superior technology, they were losing potential customers to competitors with more approachable brand identities.</p>
-            
-            <p>The existing visual identity felt clinical and dated, alienating younger researchers while failing to communicate the platform's innovative capabilities. Their website buried key features under technical jargon, and new users faced a steep learning curve that discouraged trial signups.</p>
-            
-            <p>ChromaIO needed to <span class="highlight">transform from a legacy tool into a modern platform</span> that felt as innovative as the science it enabled.</p>
+            <h2>What This Project Demonstrates</h2>
+            <p>ChromaIO is a fictional SaaS product we created from scratch to showcase what LYCKA delivers for science and technology companies. Every element — from the brand identity to the fully functional website — was designed and built in-house to demonstrate our end-to-end capabilities.</p>
+
+            <p>This test case study shows how we <span class="highlight">take a concept from zero to a market-ready brand presence</span>, covering strategy, visual identity, web design, and interactive development in a single engagement.</p>
         </section>
 
         <section class="content-section">
-            <h2>Our Approach</h2>
-            <p>LYCKA partnered with ChromaIO to reimagine their brand from the ground up, creating an identity that would resonate with both seasoned chromatographers and early-career researchers.</p>
-            
-            <h3>Brand Identity</h3>
-            <p>We developed a fresh visual system built around the metaphor of data visualization itself. The logo's colorful waveforms reference chromatography peaks while feeling modern and approachable. The color palette balances scientific credibility with accessibility, moving away from sterile blues toward a warm, multi-spectrum approach.</p>
-            
-            <h3>Web Experience</h3>
-            <p>The new website prioritizes clarity and conversion. We restructured the information architecture to lead with benefits rather than features, using clear language that speaks to researcher needs: faster analysis, better collaboration, and confidence in results.</p>
-            
-            <p>Interactive product demos replace static screenshots, letting visitors experience the platform's capabilities before signing up. The design system scales seamlessly from desktop workstations to mobile devices, recognizing that researchers access tools across contexts.</p>
+            <h2>Capabilities Demonstrated</h2>
+
+            <h3>Brand Identity Design</h3>
+            <p>We built a complete visual identity system from the ground up: logo, color palette, typography hierarchy, and brand guidelines. The ChromaIO identity balances scientific credibility with modern SaaS aesthetics — showing how we help technical companies feel approachable without losing authority.</p>
+
+            <h3>Web Design & Development</h3>
+            <p>The ChromaIO website is a fully responsive, production-quality landing page built with clean HTML, CSS, and JavaScript. We designed and developed the layout, content hierarchy, pricing structure, mobile app showcase, and conversion-focused CTAs — the complete toolkit a SaaS product needs to launch.</p>
+
+            <h3>Interactive & Motion Design</h3>
+            <p>We built custom canvas-based animations throughout the site: real-time chromatography visualizations, particle networks, flowing waveforms, and animated data charts. These aren't libraries or templates — they're hand-coded interactive elements that bring the product story to life and demonstrate our ability to create bespoke digital experiences.</p>
         </section>
 
         <section class="showcase-section">
@@ -584,39 +612,39 @@
 
         <section class="stats-section">
             <div class="content-section" style="padding: 0;">
-                <h2>The Impact</h2>
-                <p>The rebrand transformed ChromaIO's market position overnight. Within three months of launch, the platform saw dramatic improvements across all key metrics.</p>
+                <h2>Project Scope</h2>
+                <p>This test project demonstrates the full range of deliverables LYCKA produces for a typical SaaS brand engagement.</p>
             </div>
-            
+
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">340%</div>
-                    <div class="stat-label">Increase in trial signups</div>
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Complete brand identity system</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">89%</div>
-                    <div class="stat-label">Faster onboarding</div>
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Custom canvas animations</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">2,400+</div>
-                    <div class="stat-label">Active research labs</div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Responsive across all devices</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">4.8/5</div>
-                    <div class="stat-label">User satisfaction</div>
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">External libraries or templates</div>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
-            <p>The new brand helped ChromaIO secure Series A funding three months ahead of schedule, with investors citing the professional brand presence as a key factor in their decision. The platform was featured in <em>Analytical Chemistry</em> magazine and presented at major industry conferences.</p>
-            
-            <p>Most importantly, researchers reported that ChromaIO now "feels like software built for scientists by scientists who understand modern design." The brand successfully bridges scientific rigor with contemporary user expectations.</p>
+            <p>Every element of this project — brand, design, code, animation, and copywriting — was produced by LYCKA. No templates, no third-party libraries, no stock assets. This is what we build for our clients, and this test case study exists to prove it.</p>
+
+            <p>If you're a science or technology company looking for an agency that can take you from concept to launch-ready, this is the kind of work you can expect.</p>
         </section>
 
         <section class="cta-section">
-            <h2>Ready to transform your brand?</h2>
-            <p>Let's build something exceptional together.</p>
+            <h2>Like what you see?</h2>
+            <p>This is a test case study. Imagine what we'll build for your real one.</p>
             <a href="mailto:hello@lycka.digital" class="cta-button">Start a Project</a>
         </section>
     </main>
@@ -647,5 +675,10 @@
             <p class="footer-copy">&copy; 2026 LYCKA. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+    </script>
 </body>
 </html>

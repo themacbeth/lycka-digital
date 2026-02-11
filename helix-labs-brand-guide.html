@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix Labs — Brand Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --helix-teal: #2D6B77;
+            --helix-teal-dark: #1E4A53;
+            --helix-teal-deep: #183D44;
+            --helix-ice: #B8E8F5;
+            --helix-white: #FFFFFF;
+            --helix-offwhite: #F0F4F5;
+            --helix-black: #0A0A0A;
+            --helix-gray: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--helix-black);
+            color: #F5F5F5;
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── HEADER BAR ─── */
+        .guide-header {
+            padding: 24px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .guide-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .guide-header-left svg { height: 28px; width: auto; }
+
+        .guide-header-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .guide-header-back {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .guide-header-back:hover { color: var(--helix-ice); }
+
+        /* ─── SECTIONS ─── */
+        .guide-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .guide-section:last-child { border-bottom: none; }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--helix-ice);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 17px;
+            color: var(--helix-gray);
+            line-height: 1.7;
+            max-width: 600px;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+
+        /* ─── HERO / LOGO SECTION ─── */
+        .logo-hero {
+            text-align: center;
+            padding: 140px 60px 100px;
+            background: linear-gradient(180deg, var(--helix-teal-deep) 0%, var(--helix-black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 30% 40%, rgba(45,107,119,0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 300px at 70% 60%, rgba(184,232,245,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .logo-hero-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-display {
+            margin-bottom: 48px;
+        }
+
+        .logo-display svg {
+            height: 280px;
+            width: auto;
+            filter: drop-shadow(0 20px 60px rgba(0,0,0,0.4));
+        }
+
+        .logo-hero h1 {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
+        }
+
+        .logo-hero h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        /* ─── LOGO VARIANTS ─── */
+        .logo-variants {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 20px;
+        }
+
+        .logo-variant {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            border-radius: 2px;
+        }
+
+        .logo-variant svg { height: 120px; width: auto; }
+
+        .logo-variant-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .variant-dark {
+            background: var(--helix-teal);
+        }
+
+        .variant-dark .logo-variant-label { color: rgba(255,255,255,0.5); }
+
+        .variant-light {
+            background: var(--helix-offwhite);
+        }
+
+        .variant-light .logo-variant-label { color: var(--helix-gray); }
+
+        .variant-black {
+            background: var(--helix-black);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .variant-black .logo-variant-label { color: rgba(255,255,255,0.4); }
+
+        /* ─── CLEAR SPACE ─── */
+        .clearspace-demo {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .clearspace-box {
+            position: relative;
+            background: var(--helix-teal);
+            padding: 80px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clearspace-box svg { height: 140px; width: auto; }
+
+        .clearspace-border {
+            position: absolute;
+            border: 1px dashed rgba(184,232,245,0.4);
+            inset: 28px;
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .clearspace-label {
+            position: absolute;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: var(--helix-ice);
+            letter-spacing: 0.08em;
+        }
+
+        .clearspace-label.top { top: 12px; left: 50%; transform: translateX(-50%); }
+        .clearspace-label.right { right: 4px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+        /* ─── COLOR SWATCHES ─── */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2px;
+        }
+
+        .color-swatch {
+            padding: 40px 28px 28px;
+            border-radius: 2px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch:hover { transform: translateY(-3px); }
+
+        .swatch-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .swatch-values {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            line-height: 2;
+            opacity: 0.7;
+        }
+
+        .swatch-dark .swatch-name, .swatch-dark .swatch-values { color: white; }
+        .swatch-light .swatch-name, .swatch-light .swatch-values { color: var(--helix-teal-deep); }
+
+        /* ─── TYPOGRAPHY ─── */
+        .type-specimens {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .type-specimen {
+            padding: 48px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 4px;
+        }
+
+        .type-meta {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .type-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .type-meta-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--helix-ice);
+        }
+
+        .type-meta-value {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .type-display-wordmark {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .type-display-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(36px, 4vw, 56px);
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .type-display-body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            max-width: 640px;
+        }
+
+        .type-alphabet {
+            font-size: 32px;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.04em;
+            margin-top: 24px;
+            word-break: break-all;
+        }
+
+        /* ─── ANIMATION SECTION ─── */
+        .anim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .anim-cell {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 48px 32px;
+            text-align: center;
+            border-radius: 2px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .anim-cell-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* DNA Strand Rotation */
+        .anim-dna svg {
+            animation: dnaRotate 6s ease-in-out infinite;
+        }
+
+        @keyframes dnaRotate {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+        }
+
+        /* Pulse */
+        .anim-pulse svg {
+            animation: helixPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes helixPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(184,232,245,0)); }
+            50% { transform: scale(1.06); filter: drop-shadow(0 0 20px rgba(184,232,245,0.3)); }
+        }
+
+        /* Fade Up */
+        .anim-fade svg {
+            animation: helixFadeUp 3s ease-in-out infinite;
+        }
+
+        @keyframes helixFadeUp {
+            0% { opacity: 0; transform: translateY(16px); }
+            20%, 80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-16px); }
+        }
+
+        /* Segment Build */
+        .anim-build .build-segment {
+            opacity: 0;
+            animation: segmentBuild 3s ease-out infinite;
+        }
+
+        .anim-build .build-segment:nth-child(1) { animation-delay: 0s; }
+        .anim-build .build-segment:nth-child(2) { animation-delay: 0.15s; }
+        .anim-build .build-segment:nth-child(3) { animation-delay: 0.3s; }
+        .anim-build .build-segment:nth-child(4) { animation-delay: 0.45s; }
+        .anim-build .build-segment:nth-child(5) { animation-delay: 0.6s; }
+        .anim-build .build-segment:nth-child(6) { animation-delay: 0.75s; }
+        .anim-build .build-segment:nth-child(7) { animation-delay: 0.9s; }
+
+        @keyframes segmentBuild {
+            0% { opacity: 0; transform: translateY(8px); }
+            15%, 85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; }
+        }
+
+        /* Color Shift */
+        .anim-color .color-shift-mark {
+            animation: colorShift 4s ease-in-out infinite;
+        }
+
+        @keyframes colorShift {
+            0%, 100% { fill: var(--helix-white); }
+            33% { fill: var(--helix-ice); }
+            66% { fill: var(--helix-teal); }
+        }
+
+        /* Spin */
+        .anim-spin svg {
+            animation: helixSpin 8s linear infinite;
+        }
+
+        @keyframes helixSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ─── USAGE GRID ─── */
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 20px;
+        }
+
+        .usage-card {
+            padding: 48px 36px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 2px;
+        }
+
+        .usage-do { border-color: rgba(0,200,120,0.2); }
+        .usage-dont { border-color: rgba(200,60,60,0.2); }
+
+        .usage-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .usage-do .usage-label { color: #00C878; }
+        .usage-dont .usage-label { color: #C83C3C; }
+
+        .usage-card p {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .logo-variants { grid-template-columns: 1fr; }
+            .anim-grid { grid-template-columns: 1fr 1fr; }
+            .usage-grid { grid-template-columns: 1fr; }
+            .guide-section { padding: 60px 24px; }
+            .guide-header { padding: 20px 24px; }
+            .logo-hero { padding: 80px 24px 60px; }
+        }
+
+        @media (max-width: 600px) {
+            .anim-grid { grid-template-columns: 1fr; }
+            .color-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="guide-header">
+        <div class="guide-header-left">
+            <svg viewBox="0 0 140 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 8 L48 8 L48 12 L28 12 Z" fill="white"/>
+                <path d="M31 14 L45 14 L45 18 L31 18 Z" fill="white"/>
+                <path d="M35 20 L41 20 L41 24 L35 24 Z" fill="#B8E8F5"/>
+                <path d="M35 26 L41 26 L41 30 L35 30 Z" fill="#B8E8F5"/>
+                <path d="M31 32 L45 32 L45 36 L31 36 Z" fill="white"/>
+                <path d="M28 38 L48 38 L48 42 L28 42 Z" fill="white"/>
+                <text x="56" y="30" font-family="Rajdhani, sans-serif" font-size="18" font-weight="700" fill="white" letter-spacing="2">HELIX LABS</text>
+            </svg>
+            <span class="guide-header-label">Brand Guide</span>
+        </div>
+        <a href="helix-labs-case-study.html" class="guide-header-back">Back to Case Study</a>
+    </div>
+
+    <!-- LOGO HERO -->
+    <section class="logo-hero">
+        <div class="logo-hero-inner">
+            <div class="logo-display">
+                <!-- SVG LOGO — Helix Labs Mark -->
+                <svg viewBox="0 0 200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Top half — inverted trapezoid -->
+                    <path d="M50 20 L150 20 L150 48 L50 48 Z" fill="white"/>
+                    <path d="M60 56 L140 56 L140 84 L60 84 Z" fill="white"/>
+                    <path d="M75 92 L125 92 L125 112 L75 112 Z" fill="white"/>
+                    <!-- Center diamond — ice blue accent -->
+                    <path d="M85 118 L115 118 L115 138 L85 138 Z" fill="#B8E8F5"/>
+                    <path d="M90 144 L110 144 L110 158 L90 158 Z" fill="#B8E8F5"/>
+                    <!-- Bottom half — trapezoid -->
+                    <path d="M75 166 L125 166 L125 186 L75 186 Z" fill="white"/>
+                    <path d="M60 194 L140 194 L140 222 L60 222 Z" fill="white"/>
+                    <path d="M50 230 L150 230 L150 258 L50 258 Z" fill="white"/>
+                    <!-- Wordmark -->
+                    <text x="100" y="295" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="40" font-weight="700" fill="white" letter-spacing="5">HELIX</text>
+                    <text x="100" y="318" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="40" font-weight="700" fill="white" letter-spacing="5">LABS</text>
+                </svg>
+            </div>
+            <h1>Brand Guidelines</h1>
+            <h2>Helix Labs</h2>
+        </div>
+    </section>
+
+    <!-- LOGO VARIANTS -->
+    <section class="guide-section">
+        <div class="section-label">01 — Logo</div>
+        <h2 class="section-title">Logo Variations</h2>
+        <p class="section-desc">The Helix Labs logo is used in three primary configurations. Always use the version with highest contrast against the background.</p>
+
+        <div class="logo-variants">
+            <div class="logo-variant variant-dark">
+                <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60 10 L140 10 L140 32 L60 32 Z" fill="white"/>
+                    <path d="M68 38 L132 38 L132 60 L68 60 Z" fill="white"/>
+                    <path d="M80 66 L120 66 L120 82 L80 82 Z" fill="white"/>
+                    <path d="M88 88 L112 88 L112 102 L88 102 Z" fill="#B8E8F5"/>
+                    <path d="M92 108 L108 108 L108 118 L92 118 Z" fill="#B8E8F5"/>
+                    <path d="M80 124 L120 124 L120 140 L80 140 Z" fill="white"/>
+                    <path d="M68 146 L132 146 L132 168 L68 168 Z" fill="white"/>
+                    <path d="M60 174 L140 174 L140 196 L60 196 Z" fill="white"/>
+                    <text x="100" y="230" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="4">HELIX</text>
+                    <text x="100" y="256" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="4">LABS</text>
+                </svg>
+                <span class="logo-variant-label">Primary — On Brand Teal</span>
+            </div>
+
+            <div class="logo-variant variant-light">
+                <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60 10 L140 10 L140 32 L60 32 Z" fill="#2D6B77"/>
+                    <path d="M68 38 L132 38 L132 60 L68 60 Z" fill="#2D6B77"/>
+                    <path d="M80 66 L120 66 L120 82 L80 82 Z" fill="#2D6B77"/>
+                    <path d="M88 88 L112 88 L112 102 L88 102 Z" fill="#B8E8F5"/>
+                    <path d="M92 108 L108 108 L108 118 L92 118 Z" fill="#B8E8F5"/>
+                    <path d="M80 124 L120 124 L120 140 L80 140 Z" fill="#2D6B77"/>
+                    <path d="M68 146 L132 146 L132 168 L68 168 Z" fill="#2D6B77"/>
+                    <path d="M60 174 L140 174 L140 196 L60 196 Z" fill="#2D6B77"/>
+                    <text x="100" y="230" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="#2D6B77" letter-spacing="4">HELIX</text>
+                    <text x="100" y="256" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="#2D6B77" letter-spacing="4">LABS</text>
+                </svg>
+                <span class="logo-variant-label">On Light Background</span>
+            </div>
+
+            <div class="logo-variant variant-black">
+                <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60 10 L140 10 L140 32 L60 32 Z" fill="white"/>
+                    <path d="M68 38 L132 38 L132 60 L68 60 Z" fill="white"/>
+                    <path d="M80 66 L120 66 L120 82 L80 82 Z" fill="white"/>
+                    <path d="M88 88 L112 88 L112 102 L88 102 Z" fill="#B8E8F5"/>
+                    <path d="M92 108 L108 108 L108 118 L92 118 Z" fill="#B8E8F5"/>
+                    <path d="M80 124 L120 124 L120 140 L80 140 Z" fill="white"/>
+                    <path d="M68 146 L132 146 L132 168 L68 168 Z" fill="white"/>
+                    <path d="M60 174 L140 174 L140 196 L60 196 Z" fill="white"/>
+                    <text x="100" y="230" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="4">HELIX</text>
+                    <text x="100" y="256" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="4">LABS</text>
+                </svg>
+                <span class="logo-variant-label">On Dark / Black</span>
+            </div>
+        </div>
+
+        <!-- Clear Space -->
+        <div style="margin-top: 80px;">
+            <h3 class="section-title" style="font-size: 28px; margin-bottom: 12px;">Clear Space</h3>
+            <p class="section-desc">Maintain a minimum clear space equal to the height of the center diamond around all sides of the logo mark.</p>
+            <div class="clearspace-demo">
+                <div class="clearspace-box">
+                    <div class="clearspace-border"></div>
+                    <span class="clearspace-label top">1x minimum</span>
+                    <span class="clearspace-label right">1x minimum</span>
+                    <svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10 L100 10 L100 30 L20 30 Z" fill="white"/>
+                        <path d="M28 36 L92 36 L92 56 L28 56 Z" fill="white"/>
+                        <path d="M40 62 L80 62 L80 76 L40 76 Z" fill="white"/>
+                        <path d="M48 82 L72 82 L72 94 L48 94 Z" fill="#B8E8F5"/>
+                        <path d="M52 100 L68 100 L68 108 L52 108 Z" fill="#B8E8F5"/>
+                        <path d="M40 114 L80 114 L80 128 L40 128 Z" fill="white"/>
+                        <path d="M28 134 L92 134 L92 154 L28 154 Z" fill="white"/>
+                        <path d="M20 160 L100 160 L100 180 L20 180 Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLOR PALETTE -->
+    <section class="guide-section">
+        <div class="section-label">02 — Color</div>
+        <h2 class="section-title">Color Palette</h2>
+        <p class="section-desc">The Helix Labs palette is built around deep teal — conveying scientific authority — accented by ice blue for energy and precision.</p>
+
+        <div class="color-grid">
+            <div class="color-swatch swatch-dark" style="background: var(--helix-teal);">
+                <div class="swatch-name">Brand Teal</div>
+                <div class="swatch-values">
+                    HEX #2D6B77<br>
+                    RGB 45, 107, 119<br>
+                    CMYK 62, 10, 0, 53<br>
+                    Pantone 7475 C
+                </div>
+            </div>
+            <div class="color-swatch swatch-dark" style="background: var(--helix-teal-dark);">
+                <div class="swatch-name">Deep Teal</div>
+                <div class="swatch-values">
+                    HEX #1E4A53<br>
+                    RGB 30, 74, 83<br>
+                    CMYK 64, 11, 0, 67<br>
+                    Pantone 7477 C
+                </div>
+            </div>
+            <div class="color-swatch swatch-dark" style="background: var(--helix-teal-deep);">
+                <div class="swatch-name">Midnight Teal</div>
+                <div class="swatch-values">
+                    HEX #183D44<br>
+                    RGB 24, 61, 68<br>
+                    CMYK 65, 10, 0, 73<br>
+                    Pantone 7476 C
+                </div>
+            </div>
+            <div class="color-swatch swatch-light" style="background: var(--helix-ice);">
+                <div class="swatch-name">Ice Blue</div>
+                <div class="swatch-values">
+                    HEX #B8E8F5<br>
+                    RGB 184, 232, 245<br>
+                    CMYK 25, 5, 0, 4<br>
+                    Pantone 2905 C
+                </div>
+            </div>
+            <div class="color-swatch swatch-light" style="background: var(--helix-white);">
+                <div class="swatch-name">White</div>
+                <div class="swatch-values">
+                    HEX #FFFFFF<br>
+                    RGB 255, 255, 255<br>
+                    CMYK 0, 0, 0, 0<br>
+                </div>
+            </div>
+            <div class="color-swatch swatch-dark" style="background: var(--helix-black);">
+                <div class="swatch-name">Void Black</div>
+                <div class="swatch-values">
+                    HEX #0A0A0A<br>
+                    RGB 10, 10, 10<br>
+                    CMYK 0, 0, 0, 96<br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="guide-section">
+        <div class="section-label">03 — Typography</div>
+        <h2 class="section-title">Type System</h2>
+        <p class="section-desc">Three typefaces, each with a clear role. Rajdhani for the wordmark, Space Grotesk for headlines, IBM Plex Sans for body text.</p>
+
+        <div class="type-specimens">
+            <!-- Wordmark -->
+            <div class="type-specimen">
+                <div class="type-meta">
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Typeface</span>
+                        <span class="type-meta-value">Rajdhani</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Weight</span>
+                        <span class="type-meta-value">700 Bold</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Role</span>
+                        <span class="type-meta-value">Wordmark / Logo Type</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Tracking</span>
+                        <span class="type-meta-value">+60</span>
+                    </div>
+                </div>
+                <div class="type-display-wordmark">HELIX LABS</div>
+                <div class="type-alphabet" style="font-family: 'Rajdhani', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+            </div>
+
+            <!-- Headlines -->
+            <div class="type-specimen">
+                <div class="type-meta">
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Typeface</span>
+                        <span class="type-meta-value">Space Grotesk</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Weights</span>
+                        <span class="type-meta-value">500 — 700</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Role</span>
+                        <span class="type-meta-value">Headlines / UI</span>
+                    </div>
+                </div>
+                <div class="type-display-heading">DNA analysis,<br>simplified.</div>
+                <div class="type-alphabet" style="font-family: 'Space Grotesk', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789</div>
+            </div>
+
+            <!-- Body -->
+            <div class="type-specimen">
+                <div class="type-meta">
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Typeface</span>
+                        <span class="type-meta-value">IBM Plex Sans</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Weights</span>
+                        <span class="type-meta-value">300 — 500</span>
+                    </div>
+                    <div class="type-meta-item">
+                        <span class="type-meta-label">Role</span>
+                        <span class="type-meta-value">Body / Supporting</span>
+                    </div>
+                </div>
+                <div class="type-display-body">Helix Labs builds portable DNA sequencing platforms that deliver results in under 90 minutes. Our technology puts the power of a full genomics lab in your hands — wherever the science takes you.</div>
+                <div class="type-alphabet" style="font-family: 'IBM Plex Sans', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANIMATIONS -->
+    <section class="guide-section">
+        <div class="section-label">04 — Motion</div>
+        <h2 class="section-title">Animation Language</h2>
+        <p class="section-desc">Approved motion treatments for the Helix Labs mark in digital contexts. All animations should feel precise and scientific — never playful.</p>
+
+        <div class="anim-grid">
+            <!-- Pulse -->
+            <div class="anim-cell anim-pulse">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5 L65 5 L65 20 L15 20 Z" fill="white"/>
+                    <path d="M20 25 L60 25 L60 40 L20 40 Z" fill="white"/>
+                    <path d="M28 45 L52 45 L52 56 L28 56 Z" fill="white"/>
+                    <path d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path d="M28 75 L52 75 L52 86 L28 86 Z" fill="white"/>
+                    <path d="M20 91 L60 91 L60 106 L20 106 Z" fill="white"/>
+                    <path d="M15 111 L65 111 L65 126 L15 126 Z" fill="white"/>
+                </svg>
+                <span class="anim-cell-label">Pulse</span>
+            </div>
+
+            <!-- Fade Up -->
+            <div class="anim-cell anim-fade">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5 L65 5 L65 20 L15 20 Z" fill="white"/>
+                    <path d="M20 25 L60 25 L60 40 L20 40 Z" fill="white"/>
+                    <path d="M28 45 L52 45 L52 56 L28 56 Z" fill="white"/>
+                    <path d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path d="M28 75 L52 75 L52 86 L28 86 Z" fill="white"/>
+                    <path d="M20 91 L60 91 L60 106 L20 106 Z" fill="white"/>
+                    <path d="M15 111 L65 111 L65 126 L15 126 Z" fill="white"/>
+                </svg>
+                <span class="anim-cell-label">Fade Up</span>
+            </div>
+
+            <!-- Segment Build -->
+            <div class="anim-cell anim-build">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="build-segment" d="M15 5 L65 5 L65 20 L15 20 Z" fill="white"/>
+                    <path class="build-segment" d="M20 25 L60 25 L60 40 L20 40 Z" fill="white"/>
+                    <path class="build-segment" d="M28 45 L52 45 L52 56 L28 56 Z" fill="white"/>
+                    <path class="build-segment" d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path class="build-segment" d="M28 75 L52 75 L52 86 L28 86 Z" fill="white"/>
+                    <path class="build-segment" d="M20 91 L60 91 L60 106 L20 106 Z" fill="white"/>
+                    <path class="build-segment" d="M15 111 L65 111 L65 126 L15 126 Z" fill="white"/>
+                </svg>
+                <span class="anim-cell-label">Segment Build</span>
+            </div>
+
+            <!-- Color Shift -->
+            <div class="anim-cell anim-color">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="color-shift-mark" d="M15 5 L65 5 L65 20 L15 20 Z"/>
+                    <path class="color-shift-mark" d="M20 25 L60 25 L60 40 L20 40 Z"/>
+                    <path class="color-shift-mark" d="M28 45 L52 45 L52 56 L28 56 Z"/>
+                    <path d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path class="color-shift-mark" d="M28 75 L52 75 L52 86 L28 86 Z"/>
+                    <path class="color-shift-mark" d="M20 91 L60 91 L60 106 L20 106 Z"/>
+                    <path class="color-shift-mark" d="M15 111 L65 111 L65 126 L15 126 Z"/>
+                </svg>
+                <span class="anim-cell-label">Color Shift</span>
+            </div>
+
+            <!-- Spin -->
+            <div class="anim-cell anim-spin">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5 L65 5 L65 20 L15 20 Z" fill="white"/>
+                    <path d="M20 25 L60 25 L60 40 L20 40 Z" fill="white"/>
+                    <path d="M28 45 L52 45 L52 56 L28 56 Z" fill="white"/>
+                    <path d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path d="M28 75 L52 75 L52 86 L28 86 Z" fill="white"/>
+                    <path d="M20 91 L60 91 L60 106 L20 106 Z" fill="white"/>
+                    <path d="M15 111 L65 111 L65 126 L15 126 Z" fill="white"/>
+                </svg>
+                <span class="anim-cell-label">Rotate</span>
+            </div>
+
+            <!-- DNA 3D -->
+            <div class="anim-cell anim-dna" style="perspective: 400px;">
+                <svg viewBox="0 0 80 130" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5 L65 5 L65 20 L15 20 Z" fill="white"/>
+                    <path d="M20 25 L60 25 L60 40 L20 40 Z" fill="white"/>
+                    <path d="M28 45 L52 45 L52 56 L28 56 Z" fill="white"/>
+                    <path d="M33 60 L47 60 L47 70 L33 70 Z" fill="#B8E8F5"/>
+                    <path d="M28 75 L52 75 L52 86 L28 86 Z" fill="white"/>
+                    <path d="M20 91 L60 91 L60 106 L20 106 Z" fill="white"/>
+                    <path d="M15 111 L65 111 L65 126 L15 126 Z" fill="white"/>
+                </svg>
+                <span class="anim-cell-label">3D Flip</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- USAGE -->
+    <section class="guide-section">
+        <div class="section-label">05 — Usage</div>
+        <h2 class="section-title">Logo Usage Rules</h2>
+        <p class="section-desc">Maintaining consistency across all touchpoints protects brand equity and ensures recognition.</p>
+
+        <div class="usage-grid">
+            <div class="usage-card usage-do">
+                <div class="usage-label">Do</div>
+                <p>Use the logo on approved brand colors (Brand Teal, white, or black backgrounds). Maintain the minimum clear space. Use the provided vector files for all production.</p>
+            </div>
+            <div class="usage-card usage-dont">
+                <div class="usage-label">Don't</div>
+                <p>Never stretch, rotate, or distort the logo. Do not place it on busy photo backgrounds without a solid backing. Never change the ice-blue accent color.</p>
+            </div>
+            <div class="usage-card usage-do">
+                <div class="usage-label">Do</div>
+                <p>Use the horizontal lockup for small sizes and tight layouts. Scale the mark and wordmark proportionally. Use the monochrome version when color printing is unavailable.</p>
+            </div>
+            <div class="usage-card usage-dont">
+                <div class="usage-label">Don't</div>
+                <p>Never separate the mark from the wordmark in the lockup. Do not add drop shadows, strokes, or effects. Never use the logo smaller than 24px in height on digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div style="text-align: center; padding: 60px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 0.12em;">
+            Test Brand Guide — Designed by LYCKA Digital
+        </p>
+    </div>
+
+</body>
+</html>
