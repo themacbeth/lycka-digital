@@ -7,12 +7,12 @@
 <link rel="icon" type="image/png" href="assets/images/Lycka-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- â”€â”€â”€ Nav â”€â”€â”€ -->
+<!-- ─── Nav ─── -->
 <nav id="navbar">
   <a href="index.html" class="logo"><img src="assets/images/Lycka-logo.png" > LYCKA</a>
   <ul class="nav-links">
@@ -23,32 +23,30 @@
   </ul>
 </nav>
 
-<!-- â"€â"€â"€ Hero â"€â"€â"€ -->
+<!-- ─── Hero ─── -->
 <section class="hero">
   <div class="hero-dots" id="hero-dots"></div>
-  <!-- SWAP: add your logo image here -->
-  <!-- <img src="lycka-logo.png"  class="hero-logo"> -->
   <h1 class="hero-title">
     Your <em>innovation</em> can change lives<br>
     Your <em>brand</em> should change minds
   </h1>
- 
 </section>
 
-<!-- â"€â"€â"€ Intro â"€â"€â"€ -->
-<section class="intro-video-section">
-  <video class="intro-bg-video" autoplay muted loop playsinline src="assets/images/DNA.mp4"></video>
-  <div class="intro-overlay">
-    <div class="intro-content">
-      <h2 class="section-title" style="margin-bottom:32px; text-align:center;">You've cracked the code on breakthrough technology that could change everything.</h2>
-      <div style="text-align:left;">
-        <p class="section-text" style="font-size:20px; max-width:none; margin-bottom:24px;">
-          Revolutionary ideas need great storytelling
+<!-- ─── Intro / Who We Are ─── -->
+<section class="canvas-section" id="intro-section">
+  <canvas id="constellationCanvas"></canvas>
+  <div class="canvas-overlay">
+    <div class="canvas-content">
+      <div class="section-eyebrow">Who We Are</div>
+      <h2 class="section-headline">You've cracked the code on breakthrough technology that could change <em>everything.</em></h2>
+      <div style="margin-top:32px;">
+        <p class="section-text" style="max-width:none; margin-bottom:24px; font-size:18px;">
+          Revolutionary ideas need great storytelling.
         </p>
-        <p class="section-text" style="font-size:20px; max-width:none;">
+        <p class="section-text" style="max-width:none; margin-bottom:24px;">
           To attract the best talent, the right investors, and the most valuable partners, you need to capture their imaginations. They need to see vision, feel your mission, and believe in your future.
         </p>
-        <p class="section-text" style="font-size:20px; max-width:none;">
+        <p class="section-text" style="max-width:none;">
           We craft bold identities and sharp narratives that turn pioneering companies into magnetic brands. Whether you're emerging from stealth or leveling up an established presence, we translate your innovation into a movement.
         </p>
       </div>
@@ -58,32 +56,35 @@
 
 <div class="divider"></div>
 
-<!-- â”€â”€â”€ How We Work â”€â”€â”€ -->
+<!-- ─── How We Work ─── -->
 <section class="content-section">
-  <div style="text-align:center; margin-bottom:80px;">
-    <p class="section-label">Process</p>
-    <h2 class="section-title">How We Work</h2>
-    <p class="section-text" style="margin:0 auto; text-align:left;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <div class="section-eyebrow">Process</div>
+    <h2 class="section-headline">How we <em>work</em></h2>
+    <p class="section-text" style="margin:0 auto;">
       Our process is collaborative, lean, and fast-moving. From discovery to launch, we guide you through strategy, identity, and storytelling.
     </p>
   </div>
 
   <div class="content-grid">
-    <div class="content-card card-white">
+    <div class="content-card">
+      <div class="card-number">01</div>
       <h3>Clarify</h3>
       <p>
         Uncover your purpose, positioning, and personality so you can lead with clarity and conviction.
       </p>
     </div>
 
-    <div class="content-card card-white">
+    <div class="content-card">
+      <div class="card-number">02</div>
       <h3>Codify</h3>
       <p>
         Distill your identity into a powerful brand system built to scale with you.
       </p>
     </div>
 
-    <div class="content-card card-white">
+    <div class="content-card">
+      <div class="card-number">03</div>
       <h3>Amplify</h3>
       <p>
         Bring your story to the world with messaging, design, and strategy that spark interest and action.
@@ -94,17 +95,17 @@
 
 <div class="divider"></div>
 
-<!-- â”€â”€â”€ What We Do â”€â”€â”€ -->
+<!-- ─── What We Do ─── -->
 <section class="content-section">
-  <div style="text-align:center; margin-bottom:80px;">
-    <p class="section-label">Services</p>
-    <h2 class="section-title">What We Do</h2>
-    <p class="section-text" style="margin:0 auto; text-align:left;">
-      Our founding team merges deep sector expertise with fearless, boundary-pushing creativity crafting brands that don't just get noticed, but leave a lasting impression.
+  <div style="text-align:center; margin-bottom:40px;">
+    <div class="section-eyebrow">Services</div>
+    <h2 class="section-headline">What we <em>do</em></h2>
+    <p class="section-text" style="margin:0 auto;">
+      Our founding team merges deep sector expertise with fearless, boundary-pushing creativity — crafting brands that don't just get noticed, but leave a lasting impression.
     </p>
   </div>
 
-  <div class="content-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+  <div class="content-grid">
     <div class="content-card">
       <ul>
         <li>Brand Strategy & Positioning</li>
@@ -135,9 +136,9 @@
 
 <!-- ─── Featured Work ─── -->
 <section class="content-section">
-  <div style="text-align:center; margin-bottom:80px;">
-    <p class="section-label">Work</p>
-    <h2 class="section-title">Featured Project</h2>
+  <div style="text-align:center; margin-bottom:40px;">
+    <div class="section-eyebrow">Selected Work</div>
+    <h2 class="section-headline">Featured <em>project</em></h2>
   </div>
 
   <div class="featured-work">
@@ -161,14 +162,14 @@
 
 <!-- ─── CTA ─── -->
 <section class="cta-section">
-  <h2 class="cta-title">Let's Chat</h2>
-  <p class="cta-text" style="margin:0 auto; text-align:left;">
+  <h2 class="cta-title">Let's <em style="color:#D4A828; font-style:italic;">Chat</em></h2>
+  <p class="cta-text" style="margin:0 auto 48px; text-align:center;">
     Feel free to contact us to discuss how we can help your breakthrough company stand out, scale up, and earn trust through strategic branding and storytelling.
   </p>
   <a href="contact.html" class="cta-button">Get In Touch</a>
 </section>
 
-<!-- â”€â”€â”€ Footer â”€â”€â”€ -->
+<!-- ─── Footer ─── -->
 <footer>
   <div class="footer-content">
     <div class="footer-brand">
@@ -198,20 +199,20 @@
 
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 LYCKA. All rights reserved.</p>
-    
   </div>
 </footer>
 
 <script>
+  /* ─── Nav scroll ─── */
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
 
-  // Floating dots
+  /* ─── Floating dots (gold-tinted) ─── */
   const dotsContainer = document.getElementById('hero-dots');
   for (let i = 0; i < 30; i++) {
     const dot = document.createElement('span');
     const size = 4 + Math.random() * 12;
-    const opacity = 0.2 + Math.random() * 0.6;
+    const opacity = 0.15 + Math.random() * 0.45;
     const blur = Math.random() * 3;
     const x = Math.random() * 100;
     const y = Math.random() * 100;
@@ -225,6 +226,83 @@
     `;
     dotsContainer.appendChild(dot);
   }
+
+  /* ─── Gold Constellation Canvas ─── */
+  (function() {
+    const canvas = document.getElementById('constellationCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    const PARTICLE_COUNT = 80;
+    const CONNECT_DIST = 140;
+    const GOLD = { r: 212, g: 168, b: 40 };
+
+    function resize() {
+      const section = canvas.parentElement;
+      w = canvas.width = section.offsetWidth;
+      h = canvas.height = section.offsetHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: 1.5 + Math.random() * 2,
+          o: 0.2 + Math.random() * 0.4
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECT_DIST) {
+            const alpha = (1 - dist / CONNECT_DIST) * 0.15;
+            ctx.strokeStyle = `rgba(${GOLD.r},${GOLD.g},${GOLD.b},${alpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw & update particles
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${GOLD.r},${GOLD.g},${GOLD.b},${p.o})`;
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap around edges
+        if (p.x < -10) p.x = w + 10;
+        if (p.x > w + 10) p.x = -10;
+        if (p.y < -10) p.y = h + 10;
+        if (p.y > h + 10) p.y = -10;
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resize(); });
+    resize();
+    createParticles();
+    draw();
+  })();
 </script>
 
 </body>

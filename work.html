@@ -5,165 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LYCKA Digital portfolio - Brand systems and digital experiences for biotech and deep-tech organizations.">
     <title>Work — LYCKA Digital</title>
-    
+    <link rel="icon" type="image/png" href="assets/images/Lycka-logo.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="styles.css">
+
     <style>
-        :root {
-            --void: #0A0A0A;
-            --ghost: #F5F5F5;
-            --signal: #FFFFFF;
-            --bioelectric: #00FFB3;
-            --muted: #666666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--void);
-            color: var(--ghost);
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* NAV — matches index.html */
-        nav#navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 24px 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
-            transition: background 0.4s;
-        }
-
-        nav#navbar.scrolled {
-            background: rgba(0,0,0,0.96);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            color: var(--signal);
-            text-decoration: none;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 32px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 48px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--bioelectric);
-            transition: width 0.4s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--signal);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* MAIN CONTENT - New portfolio layout */
+        /* ─── Portfolio-specific styles ─── */
         main {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
-        .page-header {
-            padding: 6rem 0 4rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 4rem;
-            font-weight: 500;
-            color: var(--signal);
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.25rem;
-            color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 3rem;
-            padding: 4rem 0 8rem;
+            padding: 2rem 0 8rem;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--bioelectric);
-            box-shadow: 0 20px 60px rgba(0, 255, 179, 0.1);
+            transform: translateY(-4px);
+            border-color: var(--gold-glow);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
         .project-image {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -175,13 +62,10 @@
         .project-image::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(0, 255, 179, 0.05) 0%, transparent 70%);
+            inset: 0;
+            background: radial-gradient(circle at center, var(--gold-dim) 0%, transparent 70%);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.4s;
         }
 
         .project-card:hover .project-image::before {
@@ -194,7 +78,7 @@
             object-fit: contain;
             position: relative;
             z-index: 1;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
         }
 
         .project-content {
@@ -202,18 +86,21 @@
         }
 
         .project-title {
+            font-family: var(--font-display);
             font-size: 2rem;
-            font-weight: 500;
-            color: var(--signal);
+            font-weight: 400;
+            color: var(--text);
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
         .project-description {
-            color: var(--ghost);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            font-family: var(--font-body);
+            font-size: 16px;
             font-weight: 300;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         .project-tags {
@@ -223,128 +110,36 @@
         }
 
         .tag {
-            font-size: 0.875rem;
-            color: var(--bioelectric);
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(0, 255, 179, 0.3);
-            border-radius: 6px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-weight: 400;
-            transition: all 0.3s ease;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 8px 16px;
+            border: 1px solid rgba(212,168,40,0.3);
+            border-radius: 2px;
+            transition: background 0.3s, border-color 0.3s;
         }
 
         .project-card:hover .tag {
-            border-color: var(--bioelectric);
-            background: rgba(0, 255, 179, 0.1);
+            border-color: var(--gold);
+            background: var(--gold-dim);
         }
 
         /* Coming Soon Card */
         .project-card.coming-soon {
-            opacity: 0.4;
+            opacity: 0.35;
             pointer-events: none;
         }
 
-        .project-card.coming-soon .project-image {
-            background: rgba(255, 255, 255, 0.01);
-        }
-
         .coming-soon-label {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.875rem;
-            color: var(--muted);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--void);
-            padding: 80px 60px 48px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand-heading {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            vertical-align: middle;
-        }
-
-        .footer-brand-heading img {
-            height: 28px;
-            width: auto;
-            display: block;
-        }
-
-        .footer-brand-heading h3 {
-            line-height: 1;
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.7;
-            color: var(--muted);
-            max-width: 400px;
-        }
-
-        .footer-section h4 {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: var(--bioelectric);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 12px;
-        }
-
-        .footer-section a {
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--ghost);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-copy {
-            font-size: 13px;
-            color: var(--muted);
-            opacity: 0.5;
+            letter-spacing: 0.14em;
         }
 
         /* Responsive */
@@ -355,51 +150,14 @@
         }
 
         @media (max-width: 768px) {
-            nav#navbar {
-                padding: 16px 24px;
-            }
-
-            .nav-links {
-                gap: 24px;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-
-            .page-header p {
-                font-size: 1.125rem;
-            }
-
-            .page-header {
-                padding: 3rem 0 2rem;
-            }
-
             .project-image {
                 height: 300px;
             }
-
             .project-content {
                 padding: 2rem;
             }
-
             .project-title {
                 font-size: 1.75rem;
-            }
-
-            footer {
-                padding: 60px 32px 40px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
             }
         }
     </style>
@@ -415,15 +173,15 @@
         </ul>
     </nav>
 
-    <!-- MAIN CONTENT - New portfolio layout -->
     <main>
         <section class="page-header">
-            <h1>Selected Work</h1>
+            <div class="section-eyebrow">Our Work</div>
+            <h1>Selected <em>Work</em></h1>
             <p>Brand systems and digital experiences for organizations building the future</p>
         </section>
 
         <div class="portfolio-grid">
-            
+
             <!-- ChromaIO Project -->
             <a href="chromaio-case-study.html" class="project-card">
                 <div class="project-image">
