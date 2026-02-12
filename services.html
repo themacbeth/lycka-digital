@@ -15,7 +15,8 @@
 <!-- ─── Nav ─── -->
 <nav id="navbar">
   <a href="index.html" class="logo"><img src="assets/images/Lycka-logo.png" alt="LYCKA"> LYCKA</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="work.html">Work</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About</a></li>
@@ -39,7 +40,7 @@
   </video>
   <div class="canvas-overlay">
     <div class="canvas-content" style="max-width:1200px; width:100%;">
-      <div class="content-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="content-grid content-grid--2col">
 
         <div class="content-card">
           <div class="card-number">01</div>
@@ -155,6 +156,21 @@
 <script>
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 </script>
 
 </body>
